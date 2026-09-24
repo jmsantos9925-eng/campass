@@ -483,6 +483,41 @@ p {
   font-size: 13px;
 }
 
+.footerFeedback {
+  display: none;
+}
+
+.footerFeedback strong {
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+}
+
+.footerFeedback p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.feedbackLink {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 38px;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid rgba(216, 217, 218, 0.25);
+  border-radius: 999px;
+  color: var(--cream);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.feedbackLink:hover {
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--dark);
+}
+
 .contactIcons {
   display: flex;
   gap: 12px;
@@ -1646,6 +1681,40 @@ tbody tr:hover {
 
   .learnPanel > div {
     min-width: 0;
+  }
+}
+
+@media (min-width: 1100px) {
+  .footer {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(280px, 360px) minmax(260px, 1fr);
+  }
+
+  .footerFeedback {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-self: center;
+  }
+
+  .footerContact {
+    justify-self: end;
+  }
+
+  .footerBrand p {
+    font-size: 14px;
+  }
+
+  .footerBrand small {
+    font-size: 11px;
+  }
+
+  .footerContact strong {
+    font-size: 14px;
+  }
+
+  .iconCredit {
+    font-size: 10px;
   }
 }
 
