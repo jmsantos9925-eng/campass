@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn basic camera settings with a simple interactive preview.">
+  <title>Learn Camera Basics | CamPass</title>
+  <link rel="icon" type="image/png" href="img/logo/campass-logo-nobg.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class = "learnPage" data-page="learn">
+  <div class = "page">
+    <div id="site-header"></div>
+
+    <main class = "standardMain learnMain wrap">
+      <section class = "pageIntro">
+        <h1 class = "pageTitle">Learn camera basics.</h1>
+      </section>
+
+      <!-- working yung sliders pero simple para madaling aralin din -->
+      <section class = "learnPanel" aria-label="interactive camera controls">
+        <div>
+          <div class = "previewHead"><span>LIVE PREVIEW</span><span id="exposure-value">0.0 EV</span></div>
+          <div class = "learnPreview imgBox cover" id="learn-preview">
+            <img src="img/learn/learn-camera-preview.jpg" alt = "camera on counter">
+            <span class = "grainLayer" aria-hidden="true"></span>
+            <a class = "imgCredit" href="https://www.pexels.com/photo/camera-on-a-kitchen-counter-12497809/" target="_blank" rel="noopener">source: Matheus Bertelli on Pexels</a>
+          </div>
+          <div class = "previewSettings"><span id="preview-values">f 2.8&nbsp;&nbsp; 1 250&nbsp;&nbsp; iso 400&nbsp;&nbsp; 50 mm</span><span id="exposure-label">balanced</span></div>
+        </div>
+
+        <div class = "controlPanel" id="camera-controls">
+          <h2>Camera controls</h2>
+          <p>Try a preset or change the settings yourself.</p>
+
+          <div class = "presetArea">
+            <span class = "controlSectionTitle">quick presets</span>
+            <div class = "presetButtons">
+              <button type="button" data-camera-preset="portrait" data-preset-mode="photo">portrait</button>
+              <button type="button" data-camera-preset="action" data-preset-mode="photo">action</button>
+              <button type="button" data-camera-preset="night" data-preset-mode="photo">night</button>
+              <button type="button" data-camera-preset="vlog" data-preset-mode="filming">vlog</button>
+              <button type="button" data-camera-preset="interview" data-preset-mode="filming">interview</button>
+              <button type="button" data-camera-preset="handheld" data-preset-mode="filming">handheld</button>
+            </div>
+          </div>
+
+          <div class = "cameraControl">
+            <label class = "controlLabel" for="aperture"><span>aperture</span><output id="aperture-value">f 2.8</output></label>
+            <input id="aperture" type="range" min="0" max="4" value="2" data-output="aperture-value" data-labels="f 1.8|f 2.0|f 2.8|f 4.0|f 5.6">
+          </div>
+          <div class = "cameraControl">
+            <label class = "controlLabel" for="shutter"><span>shutter</span><output id="shutter-value">1 250</output></label>
+            <input id="shutter" type="range" min="0" max="4" value="2" data-output="shutter-value" data-labels="1 50|1 125|1 250|1 500|1 1000">
+          </div>
+          <div class = "cameraControl">
+            <label class = "controlLabel" for="iso"><span>iso</span><output id="iso-value">400</output></label>
+            <input id="iso" type="range" min="0" max="4" value="2" data-output="iso-value" data-labels="100|200|400|800|1600">
+          </div>
+          <div class = "cameraControl">
+            <label class = "controlLabel" for="focus"><span>focus</span><output id="focus-value">subject</output></label>
+            <input id="focus" type="range" min="0" max="4" value="3" data-output="focus-value" data-labels="near|front|middle|subject|far">
+          </div>
+          <div class = "cameraControl">
+            <label class = "controlLabel" for="focal"><span>focal length</span><output id="focal-value">50 mm</output></label>
+            <input id="focal" type="range" min="0" max="4" value="2" data-output="focal-value" data-labels="18 mm|35 mm|50 mm|85 mm|105 mm">
+          </div>
+
+          <div class = "controlResult">
+            <div><span>current result</span><strong id="control-result-label">balanced</strong></div>
+            <button id="reset-controls" type="button">reset</button>
+            <p id="control-tip" aria-live="polite">Move a slider or choose a preset.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class = "wideNote"><p>small changes are easier to understand.</p><a class = "button primary learnVideoButton" href="camera-video.html">watch camera video <span class = "arrow" aria-hidden="true"></span></a></div>
+    </main>
+
+    <div id="site-footer"></div>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>

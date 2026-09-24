@@ -1,0 +1,2514 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&family=Sora:wght@600;700;800&display=swap");
+
+/* mga main colors para isang edit nalang kapag may cchange */
+:root {
+  --dark: #272829;
+  --dark-soft: #202123;
+  --panel: #1d1f20;
+  --panel-soft: #303337;
+  --slate: #61677a;
+  --light: #d8d9da;
+  --cream: #fff6e0;
+  --line: rgba(216, 217, 218, 0.16);
+  --muted: rgba(216, 217, 218, 0.72);
+  --faint: rgba(216, 217, 218, 0.52);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 0;
+  margin: 0;
+  background: #151617;
+  color: var(--light);
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.wrap {
+  width: calc(100% - 144px);
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* same header sa lahat ng desktop pages */
+.topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 230px 1fr 312px;
+  align-items: center;
+  width: 100%;
+  height: 96px;
+  padding: 20px 72px;
+  border-bottom: 1px solid rgba(216, 217, 218, 0.08);
+  background: var(--dark);
+}
+
+#site-header {
+  height: 96px;
+}
+
+.menuBtn,
+.phoneMenu,
+.phoneMode,
+.tabModeBtn {
+  display: none;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  text-decoration: none;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--cream);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modeSwitch {
+  display: flex;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid rgba(216, 217, 218, 0.15);
+  border-radius: 999px;
+  background: rgba(97, 103, 122, 0.28);
+}
+
+.modeButton {
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modeButton.active {
+  background: var(--cream);
+  color: var(--dark);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(97, 103, 122, 0.18);
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: rgba(255, 246, 224, 0.55);
+}
+
+.button.primary {
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--dark);
+}
+
+.button.small {
+  min-height: 39px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  background-image: url("../img/navigation/next.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.button:not(.primary) .arrow {
+  filter: invert(1);
+}
+
+.eyebrow,
+.mono {
+  font-family: "Roboto Mono", monospace;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--cream);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.pageTitle {
+  margin-bottom: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+}
+
+.pageIntro {
+  display: grid;
+  grid-template-columns: 1fr 390px;
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 36px;
+}
+
+.pageIntro .introCopy {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.standardMain {
+  min-height: 1020px;
+  padding-top: 66px;
+  padding-bottom: 70px;
+}
+
+.shotMain {
+  min-height: 1010px;
+}
+
+/* hiwalay yung shot content para clear kung saan start ng footer */
+.shotPage .page {
+  background: var(--dark-soft);
+}
+
+.shotPage .footer {
+  background: var(--dark);
+}
+
+.shotMain .pageIntro {
+  grid-template-columns: 1fr;
+}
+
+.learnMain {
+  min-height: 1040px;
+}
+
+/* same separation like cameras at shot guide pages */
+.learnPage .page {
+  background: var(--dark-soft);
+}
+
+.learnPage .footer {
+  background: var(--dark);
+}
+
+.learnMain .pageIntro {
+  grid-template-columns: 1fr;
+}
+
+.compactHeader .topbar {
+  height: 94px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 52px;
+}
+
+.chip {
+  min-height: 39px;
+  padding: 0 18px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 999px;
+  background: rgba(97, 103, 122, 0.28);
+  color: var(--light);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chip.active,
+.chip:hover {
+  background: var(--cream);
+  color: var(--dark);
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 999px;
+  background: rgba(97, 103, 122, 0.28);
+  color: var(--light);
+  font-size: 12px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.card {
+  min-width: 0;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.imgBox {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.imgBox > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.imgBox.cover > img {
+  object-fit: cover;
+}
+
+.imgCredit {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(39, 40, 41, 0.82);
+  color: rgba(255, 246, 224, 0.95);
+  font-family: "Roboto Mono", monospace;
+  font-size: 7px;
+  text-decoration: none;
+}
+
+.wideNote {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 36px;
+  padding: 0 22px;
+  border-radius: 10px;
+  background: var(--panel-soft);
+  color: var(--light);
+  font-size: 13px;
+}
+
+.wideNote p {
+  margin-bottom: 0;
+}
+
+.wideNote a {
+  color: var(--cream);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* para obvious na button yung compare and hindi normal text lang */
+.wideNote .compareButton,
+.wideNote .guideButton,
+.wideNote .learnVideoButton {
+  min-height: 40px;
+  padding: 0 16px;
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--dark);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* footer details */
+.footer {
+  display: flex;
+  height: 240px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 44px 72px;
+  background: var(--dark);
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerBrand .brand {
+  gap: 10px;
+  font-size: 24px;
+}
+
+.footerBrand .logo {
+  width: 34px;
+  height: 34px;
+}
+
+.footerBrand p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footerBrand small {
+  color: var(--faint);
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footerContact strong {
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 13px;
+}
+
+.contactIcons {
+  display: flex;
+  gap: 12px;
+}
+
+.contactIcon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.contactIcon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.iconCredit {
+  color: rgba(216, 217, 218, 0.7);
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+/* home page */
+.homeHero {
+  display: grid;
+  grid-template-columns: 560px minmax(680px, 1fr);
+  gap: 56px;
+  height: 720px;
+  align-items: center;
+  padding: 56px 72px 64px;
+}
+
+.heroCopy {
+  transform: translateY(-28px);
+}
+
+.heroHeading {
+  margin-bottom: 24px;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 68px;
+  letter-spacing: -2.2px;
+}
+
+.heroCopy > p:not(.eyebrow):not(.heroMeta) {
+  max-width: 510px;
+  margin-bottom: 24px;
+  color: rgba(216, 217, 218, 0.78);
+  font-size: 18px;
+  line-height: 29px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.heroActions .button {
+  min-height: 51px;
+  padding: 0 22px;
+  font-size: 14px;
+}
+
+.heroMeta {
+  margin-bottom: 0;
+  color: var(--faint);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  height: 592px;
+  overflow: hidden;
+  border-radius: 28px;
+  background-image: linear-gradient(to bottom, rgba(39, 40, 41, 0.02), rgba(39, 40, 41, 0.1) 55%, rgba(20, 21, 23, 0.72)), url("../img/home/hero-image.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.photoModeLabel {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px 9px 12px;
+  border: 1px solid rgba(255, 246, 224, 0.25);
+  border-radius: 999px;
+  background: rgba(24, 25, 27, 0.7);
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+
+.photoModeLabel::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cream);
+  content: "";
+}
+
+.heroResult {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  min-height: 128px;
+  padding: 18px 22px 32px;
+  border: 1px solid rgba(255, 246, 224, 0.22);
+  border-radius: 18px;
+  background: rgba(22, 23, 25, 0.78);
+}
+
+.heroResult .imgCredit {
+  right: 14px;
+  bottom: 12px;
+}
+
+.heroResult small {
+  color: rgba(216, 217, 218, 0.65);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.heroResult h2 {
+  margin: 7px 0;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 20px;
+}
+
+.settingTags {
+  display: flex;
+  gap: 8px;
+}
+
+.settingTags span {
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: rgba(97, 103, 122, 0.32);
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+}
+
+.homeBrands {
+  height: 356px;
+  padding: 44px 72px;
+  background: var(--dark-soft);
+}
+
+.brandHeading {
+  display: flex;
+  height: 72px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.brandHeading h2 {
+  margin-bottom: 0;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.brandHeading .eyebrow {
+  margin-bottom: 8px;
+  color: var(--faint);
+}
+
+.brandHeading > p {
+  width: 390px;
+  margin-bottom: 0;
+  color: rgba(216, 217, 218, 0.62);
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+}
+
+.brandGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.brandCard {
+  display: flex;
+  height: 110px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.brandCard strong {
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+}
+
+.brandCard small {
+  color: rgba(216, 217, 218, 0.62);
+  font-family: "Roboto Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.brandCard:hover {
+  background: var(--cream);
+  color: var(--dark);
+}
+
+.brandCard:hover small {
+  color: rgba(97, 103, 122, 0.75);
+}
+
+/* camera cards */
+.camerasPage .page {
+  background: var(--dark-soft);
+}
+
+.camerasPage .footer {
+  background: var(--dark);
+}
+
+.cameraMain .pageIntro {
+  grid-template-columns: 1fr;
+}
+
+.cameraCard {
+  display: flex;
+  height: 500px;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.cameraCard .imgBox {
+  height: 205px;
+  margin-bottom: 18px;
+}
+
+.cardLabel {
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+}
+
+.cameraCard h2,
+.shotCard h2 {
+  margin: 13px 0 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.cameraCard > p,
+.shotCard > p {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.cameraCard .tagList {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+.cameraCard .button {
+  align-self: flex-start;
+}
+
+/* shot guide cards */
+.shotCard {
+  height: 510px;
+  padding: 24px;
+}
+
+.shotCard .imgBox {
+  height: 218px;
+  margin-bottom: 18px;
+}
+
+.shotCard .settingsRow {
+  display: flex;
+  height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: var(--panel-soft);
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+}
+
+.shotCard .settingsRow span:last-child {
+  font-size: 10px;
+}
+
+/* learn page */
+.learnPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 512px;
+  gap: 24px;
+  min-height: 750px;
+  padding: 24px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.previewHead {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+}
+
+.learnPreview {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.learnPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(var(--preview-brightness, 1)) blur(var(--preview-blur, 0px)) saturate(var(--preview-saturation, 1));
+  transform: scale(var(--preview-zoom, 1));
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.grainLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: repeating-radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.16) 0 1px, rgba(0, 0, 0, 0.15) 1px 2px, transparent 2px 4px);
+  mix-blend-mode: overlay;
+  opacity: var(--preview-grain, 0);
+  pointer-events: none;
+}
+
+.learnPreview .imgCredit {
+  z-index: 2;
+  font-size: 9px;
+}
+
+.previewSettings {
+  display: flex;
+  height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: var(--panel-soft);
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+}
+
+.controlPanel {
+  padding: 26px 28px;
+  border-radius: 14px;
+  background: #2c2f33;
+}
+
+.controlPanel h2 {
+  margin-bottom: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 27px;
+}
+
+.controlPanel > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.presetArea {
+  margin-top: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(216, 217, 218, 0.14);
+}
+
+.controlSectionTitle {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--cream);
+  font-size: 12px;
+}
+
+.presetButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.presetButtons button,
+#reset-controls {
+  min-height: 36px;
+  border: 1px solid rgba(216, 217, 218, 0.22);
+  border-radius: 8px;
+  background: rgba(97, 103, 122, 0.24);
+  color: var(--light);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.presetButtons button:hover,
+.presetButtons button.active {
+  border-color: var(--cream);
+  background: var(--cream);
+  color: var(--dark);
+}
+
+.cameraControl {
+  margin-top: 19px;
+}
+
+.controlLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  font-size: 13px;
+}
+
+.controlLabel output {
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+}
+
+.cameraControl input {
+  width: 100%;
+  height: 8px;
+  accent-color: var(--cream);
+  cursor: pointer;
+}
+
+.controlResult {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 9px 12px;
+  margin-top: 22px;
+  padding: 14px;
+  border: 1px solid rgba(216, 217, 218, 0.15);
+  border-radius: 10px;
+  background: rgba(24, 26, 28, 0.4);
+}
+
+.controlResult div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.controlResult div span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.controlResult strong {
+  color: var(--cream);
+  font-size: 13px;
+}
+
+#reset-controls {
+  min-width: 68px;
+  padding: 0 12px;
+}
+
+.controlResult p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--light);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* compare page */
+.compareMain {
+  min-height: 780px;
+  padding-top: 76px;
+  padding-bottom: 70px;
+}
+
+/* ibang shade para hiwalay yung compare content sa footer */
+.comparePage .page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--dark-soft);
+}
+
+.comparePage .compareMain {
+  flex: 1 0 auto;
+}
+
+.comparePage .footer {
+  flex: 0 0 auto;
+  background: var(--dark);
+}
+
+.tableWrap {
+  overflow: hidden;
+  margin-top: 32px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th,
+td {
+  height: 49px;
+  padding: 0 15px;
+  border-right: 1px solid rgba(216, 217, 218, 0.16);
+  border-bottom: 1px solid rgba(216, 217, 218, 0.16);
+  text-align: left;
+}
+
+th:last-child,
+td:last-child {
+  border-right: 0;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+th {
+  height: 47px;
+  background: linear-gradient(110deg, var(--slate), #505567);
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+tbody tr:hover {
+  background: rgba(255, 246, 224, 0.04);
+}
+
+.finderCta {
+  display: flex;
+  height: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #151719;
+  text-align: center;
+}
+
+.finderCta h2 {
+  margin-bottom: 12px;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+.finderCta p:not(.eyebrow) {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* camera video page */
+.videoMain {
+  min-height: 990px;
+  padding-top: 76px;
+  padding-bottom: 70px;
+}
+
+.videoPage .page {
+  background: var(--dark-soft);
+}
+
+.videoPage .footer {
+  background: var(--dark);
+}
+
+.videoPage .pageIntro {
+  grid-template-columns: 1fr;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(420px, 0.85fr);
+  gap: 24px;
+}
+
+.videoCard,
+.lessonCard {
+  min-height: 500px;
+  padding: 18px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.videoCard {
+  margin: 0;
+}
+
+.videoThumb {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #08090b;
+}
+
+.videoEmbed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.videoCaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lessonCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 34px;
+}
+
+.lessonCard h2 {
+  margin-bottom: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: 26px;
+}
+
+.lessonCard > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.descriptionBox {
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid rgba(216, 217, 218, 0.15);
+  border-radius: 10px;
+  background: var(--panel-soft);
+}
+
+.descriptionBox strong {
+  color: var(--cream);
+  font-size: 12px;
+}
+
+.descriptionBox ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.videoOpenButton {
+  align-self: flex-start;
+  min-height: 42px;
+  font-size: 12px;
+}
+
+.videoOptions {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.videoOption {
+  display: flex;
+  min-height: 92px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid rgba(216, 217, 218, 0.18);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--light);
+  text-align: left;
+  cursor: pointer;
+}
+
+.videoOption strong {
+  margin-bottom: 4px;
+  color: var(--cream);
+  font-size: 13px;
+}
+
+.videoOption small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.videoOption:hover,
+.videoOption.active {
+  border-color: var(--cream);
+  background: rgba(255, 246, 224, 0.08);
+}
+
+.descriptionBox p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* about page */
+.aboutPage .page {
+  background: var(--dark-soft);
+}
+
+.aboutPage .footer {
+  background: var(--dark);
+}
+
+.aboutMain {
+  min-height: 1120px;
+  padding-top: 66px;
+  padding-bottom: 86px;
+}
+
+.aboutIntro {
+  display: block;
+}
+
+.aboutIntro .pageTitle {
+  max-width: 940px;
+}
+
+.aboutPanel {
+  display: grid;
+  grid-template-columns: minmax(400px, 0.9fr) minmax(0, 1.1fr);
+  gap: 36px;
+  min-height: 390px;
+  padding: 24px;
+}
+
+.aboutPanel .imgBox {
+  height: 342px;
+}
+
+.aboutCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutCopy h2 {
+  margin-bottom: 16px;
+  font-family: "Sora", sans-serif;
+  font-size: 32px;
+}
+
+.aboutCopy > p {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 34px 0 30px;
+}
+
+.sectionHeading h2 {
+  margin-bottom: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+}
+
+.sectionHeading span {
+  color: var(--cream);
+  font-size: 10px;
+}
+
+.aboutStoryGrid,
+.aboutBottomGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.aboutStoryCard,
+.aboutBottomCard {
+  min-height: 220px;
+  padding: 30px;
+}
+
+.aboutStoryCard h2,
+.aboutBottomCard h2,
+.aboutSources h2,
+.aboutNote h2 {
+  margin-bottom: 14px;
+  font-family: "Sora", sans-serif;
+  font-size: 23px;
+}
+
+.aboutStoryCard p,
+.aboutBottomCard p,
+.aboutSources p,
+.aboutNote p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.aboutSection {
+  margin-top: 54px;
+}
+
+.aboutFeatureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.aboutFeatureCard {
+  min-height: 170px;
+  padding: 25px;
+}
+
+.aboutFeatureCard h3 {
+  margin-bottom: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+}
+
+.aboutFeatureCard p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.aboutSources {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 50px;
+  margin-top: 54px;
+  padding: 34px;
+}
+
+.aboutSources p + p {
+  margin-top: 12px;
+}
+
+.sourceLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-content: center;
+}
+
+.sourceLinks a {
+  padding: 13px 15px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 9px;
+  color: var(--light);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.sourceLinks a:hover {
+  border-color: var(--cream);
+  color: var(--cream);
+}
+
+.aboutNote {
+  margin-top: 24px;
+  padding: 28px 32px;
+  border-left: 4px solid var(--cream);
+  border-radius: 0 12px 12px 0;
+  background: var(--panel-soft);
+}
+
+.aboutNote p {
+  max-width: 1050px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.infoCard {
+  height: 200px;
+  padding: 24px;
+}
+
+.infoCard .number {
+  color: var(--cream);
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+}
+
+.infoCard h3 {
+  margin: 14px 0 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 22px;
+}
+
+.infoCard p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* finder page */
+.finderMain {
+  min-height: 1000px;
+  padding-top: 60px;
+}
+
+.finderGrid {
+  display: grid;
+  grid-template-columns: 760px 512px;
+  gap: 24px;
+}
+
+.finderForm,
+.finderResult {
+  height: 680px;
+  padding: 28px;
+}
+
+.finderForm h2 {
+  margin-bottom: 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 27px;
+}
+
+.finderForm > p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.question {
+  margin: 22px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.question legend {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.question .filters {
+  margin-bottom: 0;
+  gap: 8px;
+}
+
+.question .chip {
+  min-height: 36px;
+  padding: 0 15px;
+}
+
+.formActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.finderResult .imgBox {
+  height: 260px;
+  margin-bottom: 14px;
+}
+
+.finderResult h2 {
+  margin: 14px 0 12px;
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+}
+
+.finderResult > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.finderResult .tagList {
+  margin: 18px 0;
+}
+
+.resultLink {
+  color: var(--cream);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* camera information page */
+.cameraInfoMain {
+  min-height: 1100px;
+  padding-top: 60px;
+}
+
+.cameraInfoPanel {
+  display: grid;
+  grid-template-columns: 650px 1fr;
+  gap: 36px;
+  height: 500px;
+  padding: 24px;
+}
+
+.cameraInfoPanel .imgBox {
+  height: 452px;
+}
+
+.cameraInfoCopy {
+  padding-top: 16px;
+}
+
+.cameraInfoCopy h2 {
+  margin: 18px 0;
+  font-family: "Sora", sans-serif;
+  font-size: 30px;
+}
+
+.cameraInfoCopy > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.simpleNote {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--panel-soft);
+}
+
+.simpleNote strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--cream);
+  font-size: 12px;
+}
+
+.simpleNote p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.cameraInfoMain .infoGrid {
+  margin-top: 32px;
+}
+
+.cameraInfoMain .infoCard {
+  height: 230px;
+}
+
+.infoCard a {
+  color: var(--cream);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.noteActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* para goods parin or like kasya sa ibang common screen ng laptop */
+@media (min-width: 1100px) and (max-width: 1439px) {
+  .topbar {
+    grid-template-columns: 180px 1fr 300px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .nav {
+    gap: 28px;
+  }
+
+  .homeHero {
+    grid-template-columns: minmax(420px, 44%) minmax(0, 1fr);
+    gap: 32px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .heroHeading {
+    font-size: 54px;
+    line-height: 1.08;
+  }
+
+  .homeBrands {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .learnPanel {
+    grid-template-columns: minmax(0, 1.45fr) minmax(390px, 0.9fr);
+  }
+
+  .learnPanel > div {
+    min-width: 0;
+  }
+}
+
+/* tablet layout */
+@media (min-width: 768px) and (max-width: 1099px) {
+  #site-header {
+    height: 94px;
+  }
+
+  .wrap {
+    width: calc(100% - 76px);
+  }
+
+  .topbar {
+    grid-template-columns: 126px minmax(280px, 1fr) 250px;
+    gap: 10px;
+    height: 94px;
+    padding: 20px 38px;
+  }
+
+  .topbar .brand {
+    gap: 8px;
+    font-size: 20px;
+  }
+
+  .topbar .logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .navActions {
+    gap: 10px;
+  }
+
+  .navActions .button {
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 11px;
+  }
+
+  .navActions .modeSwitch {
+    display: none;
+  }
+
+  .tabModeBtn {
+    display: inline-flex;
+    min-width: 74px;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border: 1px solid rgba(216, 217, 218, 0.18);
+    border-radius: 999px;
+    background: rgba(97, 103, 122, 0.28);
+    color: var(--cream);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .modeButton {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .pageTitle {
+    font-size: 44px;
+  }
+
+  .pageIntro {
+    grid-template-columns: 1fr 230px;
+    gap: 40px;
+  }
+
+  .homeHero {
+    grid-template-columns: minmax(0, 299px) minmax(0, 1fr);
+    gap: 28px;
+    height: 550px;
+    align-items: center;
+    padding: 54px 38px;
+  }
+
+  .heroCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: none;
+  }
+
+  .heroHeading {
+    margin-bottom: 14px;
+    font-size: 44px;
+    line-height: 1.08;
+  }
+
+  .heroCopy > p:not(.eyebrow):not(.heroMeta) {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .heroActions .button {
+    min-height: 42px;
+    font-size: 11px;
+  }
+
+  .heroImage {
+    height: 412px;
+    border-radius: 18px;
+  }
+
+  .heroResult {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    min-height: 92px;
+    padding: 14px 14px 38px;
+  }
+
+  .heroResult h2 {
+    font-size: 16px;
+  }
+
+  .heroResult .imgCredit {
+    right: 12px;
+    bottom: 10px;
+    font-size: 8px;
+  }
+
+  .settingTags {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .settingTags span {
+    font-size: 9px;
+  }
+
+  .homeBrands {
+    height: auto;
+    min-height: 402px;
+    padding: 44px 38px;
+  }
+
+  .brandHeading h2 {
+    font-size: 24px;
+  }
+
+  .brandHeading > p {
+    width: 368px;
+    font-size: 12px;
+  }
+
+  .brandGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .brandCard {
+    grid-column: span 2;
+  }
+
+  .brandCard:nth-child(4),
+  .brandCard:nth-child(5) {
+    grid-column: span 3;
+  }
+
+  .brandCard {
+    height: 100px;
+  }
+
+  .brandCard small {
+    font-size: 9px;
+  }
+
+  .imgCredit {
+    font-size: 9px;
+  }
+
+  .shotPage .filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .shotPage .filters .chip {
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .footerBrand small,
+  .iconCredit {
+    font-size: 10px;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .cameraCard,
+  .shotCard {
+    height: 416px;
+    padding: 17px;
+  }
+
+  .cameraCard .imgBox,
+  .shotCard .imgBox {
+    height: 185px;
+  }
+
+  .cardGrid .cameraCard:last-child:nth-child(odd),
+  .cardGrid .shotCard:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .learnPanel,
+  .finderGrid,
+  .videoGrid,
+  .cameraInfoPanel {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .learnPanel {
+    padding: 18px;
+  }
+
+  .learnPreview {
+    height: 420px;
+  }
+
+  .finderGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .finderForm,
+  .finderResult {
+    height: auto;
+    min-height: 680px;
+    padding: 20px;
+  }
+
+  .videoGrid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
+
+  .videoOptions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .videoCard,
+  .lessonCard {
+    height: auto;
+    min-height: 0;
+  }
+
+  .videoThumb {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .lessonCard {
+    padding: 24px;
+  }
+
+  .lessonCard h2 {
+    font-size: 23px;
+  }
+
+  .descriptionBox {
+    padding: 15px;
+  }
+
+  .aboutPanel {
+    grid-template-columns: 46% 1fr;
+  }
+
+  .aboutFeatureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .aboutSources {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .infoGrid {
+    gap: 18px;
+  }
+
+  .cameraInfoPanel {
+    grid-template-columns: 48% 1fr;
+  }
+
+  .footer {
+    height: 230px;
+    padding: 36px 38px;
+  }
+}
+
+/* phone layout */
+@media (max-width: 767px) {
+  #site-header {
+    height: auto;
+    padding-top: 78px;
+  }
+
+  .wrap {
+    width: calc(100% - 40px);
+  }
+
+  .topbar {
+    display: grid;
+    grid-template-columns: 1fr 42px;
+    height: 78px;
+    padding: 22px 20px 14px;
+  }
+
+  .topbar .brand {
+    font-size: 18px;
+  }
+
+  .topbar .logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav,
+  .navActions {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  .menuBtn span {
+    width: 16px;
+    height: 1px;
+    background: var(--cream);
+  }
+
+  .phoneMode {
+    position: static;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    padding: 32px 20px 0;
+    border-bottom: 0;
+    background: transparent;
+  }
+
+  .phoneMode::before {
+    display: none;
+  }
+
+  .phoneMode .modeSwitch {
+    width: 220px;
+    justify-content: center;
+  }
+
+  .phoneMode .modeButton {
+    flex: 1;
+  }
+
+  .phoneMenu {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: block;
+    overflow-y: auto;
+    padding: 24px 20px;
+    background: var(--dark);
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.35);
+    transform: translateX(100%);
+    transition: transform 280ms ease;
+    will-change: transform;
+  }
+
+  .phoneMenu.open {
+    transform: translateX(0);
+  }
+
+  .menuHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 54px;
+  }
+
+  .menuHead .brand {
+    font-size: 18px;
+  }
+
+  .closeBtn {
+    border: 0;
+    background: transparent;
+    color: var(--cream);
+    font-size: 14px;
+  }
+
+  .phoneMenu nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .phoneMenu nav a {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--light);
+    font-family: "Sora", sans-serif;
+    font-size: 28px;
+    text-decoration: none;
+  }
+
+  .menuActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .menuActions small {
+    color: var(--faint);
+    font-family: "Roboto Mono", monospace;
+    font-size: 9px;
+  }
+
+  body.menuOpen {
+    overflow: hidden;
+  }
+
+  .pageTitle {
+    font-size: 36px;
+    line-height: 1.08;
+  }
+
+  .pageIntro {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .pageIntro .introCopy {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+
+  .standardMain,
+  .compareMain,
+  .videoMain,
+  .aboutMain,
+  .finderMain,
+  .cameraInfoMain {
+    min-height: 0;
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .homeHero {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px 20px 40px;
+  }
+
+  .heroCopy {
+    width: 100%;
+    transform: none;
+  }
+
+  .heroCopy .eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .heroHeading {
+    margin-bottom: 14px;
+    font-size: 36px;
+    line-height: 1.08;
+    letter-spacing: -1.4px;
+  }
+
+  .heroCopy > p:not(.eyebrow):not(.heroMeta) {
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .heroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .heroActions .button {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  .heroMeta {
+    font-size: 8px;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 350px;
+    border-radius: 14px;
+  }
+
+  .photoModeLabel {
+    top: 14px;
+    left: 14px;
+    font-size: 8px;
+  }
+
+  .heroResult {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    min-height: 84px;
+    padding: 12px 12px 29px;
+    border-radius: 10px;
+  }
+
+  .heroResult small,
+  .settingTags span {
+    font-size: 7px;
+  }
+
+  .heroResult h2 {
+    margin: 5px 0;
+    font-size: 15px;
+  }
+
+  .homeBrands {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .brandHeading {
+    display: block;
+    height: auto;
+    margin-bottom: 22px;
+  }
+
+  .brandHeading h2 {
+    font-size: 22px;
+  }
+
+  .brandHeading > p {
+    width: 100%;
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  .brandGrid,
+  .cardGrid,
+  .infoGrid,
+  .learnPanel,
+  .finderGrid,
+  .videoGrid,
+  .cameraInfoPanel,
+  .aboutPanel,
+  .aboutStoryGrid,
+  .aboutBottomGrid,
+  .aboutFeatureGrid,
+  .aboutSources {
+    grid-template-columns: 1fr;
+  }
+
+  .brandCard {
+    height: 64px;
+  }
+
+  .brandCard strong {
+    font-size: 16px;
+  }
+
+  .brandCard small {
+    display: none;
+  }
+
+  .filters {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .chip {
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  .cardGrid {
+    gap: 16px;
+  }
+
+  .cardGrid .cameraCard:last-child:nth-child(odd),
+  .cardGrid .shotCard:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .cameraCard,
+  .shotCard {
+    height: auto;
+    min-height: 410px;
+    padding: 17px;
+  }
+
+  .cameraCard .imgBox,
+  .shotCard .imgBox {
+    height: 210px;
+  }
+
+  .wideNote {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .noteActions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .tableWrap {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  .learnPanel {
+    gap: 16px;
+    padding: 14px;
+  }
+
+  .learnPreview {
+    height: 280px;
+  }
+
+  .previewSettings {
+    gap: 10px;
+    font-size: 9px;
+  }
+
+  .controlPanel {
+    padding: 22px;
+  }
+
+  .finderForm,
+  .finderResult {
+    min-height: 0;
+    height: auto;
+    padding: 19px;
+  }
+
+  .finderResult .imgBox {
+    height: 220px;
+  }
+
+  .videoCard,
+  .lessonCard {
+    height: auto;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .videoThumb {
+    height: 210px;
+  }
+
+  .videoOptions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .videoOption:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .lessonCard {
+    padding: 22px;
+  }
+
+  .videoCaption {
+    margin-bottom: 0;
+  }
+
+  .aboutPanel,
+  .cameraInfoPanel {
+    height: auto;
+    gap: 20px;
+    padding: 14px;
+  }
+
+  .aboutPanel .imgBox,
+  .cameraInfoPanel .imgBox {
+    height: 230px;
+  }
+
+  .aboutMain {
+    padding-bottom: 54px;
+  }
+
+  .aboutStoryCard,
+  .aboutBottomCard,
+  .aboutSources {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .aboutSection,
+  .aboutSources {
+    margin-top: 38px;
+  }
+
+  .aboutFeatureGrid {
+    gap: 14px;
+  }
+
+  .aboutFeatureCard {
+    min-height: 0;
+  }
+
+  .sourceLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutNote {
+    padding: 24px 22px;
+  }
+
+  .aboutCopy,
+  .cameraInfoCopy {
+    padding: 10px 7px;
+  }
+
+  .aboutCopy h2,
+  .cameraInfoCopy h2 {
+    font-size: 26px;
+  }
+
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .infoCard,
+  .cameraInfoMain .infoCard {
+    height: auto;
+    min-height: 146px;
+    padding: 21px;
+  }
+
+  .finderCta {
+    height: 289px;
+    padding: 30px 20px;
+  }
+
+  .finderCta h2 {
+    font-size: 25px;
+  }
+
+  .footer {
+    height: 260px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 20px;
+  }
+
+  .footerBrand .brand {
+    font-size: 20px;
+  }
+
+  .footerBrand .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .contactIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+}
+
+/* white para kapag pinrint madaling lang basahin */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  body,
+  .page,
+  .card,
+  .tableWrap,
+  .wideNote {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  .topbar,
+  .phoneMode,
+  .footer,
+  .finderCta,
+  .printTools,
+  .button,
+  .filters,
+  .imgCredit {
+    display: none !important;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: none;
+  }
+
+  .pageTitle,
+  h1,
+  h2,
+  h3,
+  p,
+  td,
+  th,
+  .eyebrow,
+  .cardLabel,
+  .number {
+    color: #111111 !important;
+  }
+
+  .cameraInfoPanel,
+  .infoGrid {
+    break-inside: avoid;
+  }
+
+  th {
+    background: #e5e5e5 !important;
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CamPass gives beginners simple camera and shot recommendations.">
+  <title>CamPass | Camera choices made simple</title>
+  <link rel="icon" type="image/png" href="img/logo/campass-logo-nobg.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <div class = "page">
+    <!-- dito automatic nilalagay nung site.js yung shared nav -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class = "homeHero">
+        <div class = "heroCopy">
+          <p class = "eyebrow">camera guide</p>
+          <h1 class = "heroHeading">Find the gear.<br>Get the shot.</h1>
+          <p>Choose what you want to shoot. CamPass will suggest a camera, lens, settings, and simple shot ideas.</p>
+
+          <div class = "heroActions">
+            <a class = "button primary" href="camera-finder.html">find a camera <span class = "arrow" aria-hidden="true"></span></a>
+            <a class = "button" href="shot-guide.html">view shot ideas <span class = "arrow" aria-hidden="true"></span></a>
+          </div>
+        </div>
+
+        <!-- para sa hero image local copy para mabilis mag load -->
+        <div class = "heroImage">
+          <span class = "photoModeLabel" id="hero-mode-label">PHOTO MODE</span>
+          <div class = "heroResult">
+            <small id="hero-result-label">SAMPLE PHOTO SETUP</small>
+            <h2 id="hero-result-title">Lightweight hybrid setup</h2>
+            <div class = "settingTags" id="hero-result-tags"><span>35 MM</span><span>F/2.8</span><span>1/250</span><span>ISO 400</span></div>
+            <a class = "imgCredit" href="https://github.com/jmsantos9925-eng/img/blob/main/CamPass/hero%20image.jpg" target="_blank" rel="noopener">source: project image</a>
+          </div>
+        </div>
+      </section>
+
+      <section class = "homeBrands">
+        <div class = "brandHeading">
+          <div>
+            <p class = "eyebrow">explore by brand</p>
+            <h2>Start with a name you trust.</h2>
+          </div>
+        </div>
+
+        <div class = "brandGrid">
+          <a class = "brandCard" href="cameras.html?brand=canon"><strong>CANON</strong><small>PHOTO + FILM</small></a>
+          <a class = "brandCard" href="cameras.html?brand=sony"><strong>SONY</strong><small>HYBRID + CREATOR</small></a>
+          <a class = "brandCard" href="cameras.html?brand=nikon"><strong>NIKON</strong><small>PHOTO + FILM</small></a>
+          <a class = "brandCard" href="cameras.html?brand=fujifilm"><strong>FUJIFILM</strong><small>COLOR + STREET</small></a>
+          <a class = "brandCard" href="cameras.html?brand=dji"><strong>DJI</strong><small>VLOG + ACTION</small></a>
+        </div>
+      </section>
+    </main>
+
+    <section class = "finderCta">
+      <p class = "eyebrow">ready when you are</p>
+      <h2>Find a camera for your next shot.</h2>
+      <p>Answer a few simple questions and get camera and shot suggestions.</p>
+      <a class = "button primary small" href="camera-finder.html">find my camera <span class = "arrow" aria-hidden="true"></span></a>
+    </section>
+
+    <div id="site-footer"></div>
+  </div>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

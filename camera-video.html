@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A short CamPass lesson about the exposure triangle.">
+  <title>Camera Video | CamPass</title>
+  <link rel="icon" type="image/png" href="img/logo/campass-logo-nobg.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class = "compactHeader videoPage" data-page="learn">
+  <div class = "page">
+    <div id="site-header"></div>
+
+    <main class = "videoMain wrap">
+      <section class = "pageIntro">
+        <h1 class = "pageTitle">Camera lessons for beginners.</h1>
+      </section>
+
+      <section class = "videoGrid">
+        <figure class = "videoCard">
+          <!-- para dito mismo napanood and maswitch yung youtube lesson -->
+          <div class = "videoThumb videoEmbed">
+            <iframe id="video-player" src="https://www.youtube-nocookie.com/embed/WkZXlfUzuUQ?rel=0" title="Understand exposure YouTube lesson" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption class = "videoCaption" id="video-caption">Exposure triangle lesson by Mike Jeffrey</figcaption>
+        </figure>
+
+        <aside class = "lessonCard">
+          <h2 id="video-lesson-title">Understand exposure.</h2>
+          <p id="video-lesson-copy">See how aperture, shutter speed, and ISO work together before using manual mode.</p>
+          <div class = "descriptionBox">
+            <strong>What you will learn</strong>
+            <ul id="video-lesson-points">
+              <li>Aperture controls light and background blur.</li>
+              <li>Shutter speed controls motion and light.</li>
+              <li>ISO can brighten the image and add grain.</li>
+            </ul>
+          </div>
+          <a class = "button primary videoOpenButton" id="video-youtube-link" href="https://www.youtube.com/watch?v=WkZXlfUzuUQ" target="_blank" rel="noopener">open on YouTube <span class = "arrow" aria-hidden="true"></span></a>
+        </aside>
+      </section>
+
+      <section class = "videoOptions" aria-label="camera lesson choices">
+        <button class = "videoOption active" type="button" data-video-lesson="exposure"><strong>Exposure</strong><small>aperture, shutter, and ISO</small></button>
+        <button class = "videoOption" type="button" data-video-lesson="aperture"><strong>Aperture</strong><small>light and background blur</small></button>
+        <button class = "videoOption" type="button" data-video-lesson="shutter"><strong>Shutter speed</strong><small>freeze or show movement</small></button>
+        <button class = "videoOption" type="button" data-video-lesson="frame"><strong>Frame rate</strong><small>movement in a video</small></button>
+        <button class = "videoOption" type="button" data-video-lesson="filming"><strong>Filming setup</strong><small>settings before recording</small></button>
+      </section>
+    </main>
+
+    <section class = "finderCta">
+      <p class = "eyebrow">ready when you are</p>
+      <h2>Find a camera for your next shot.</h2>
+      <p>Answer a few simple questions and get camera and shot suggestions.</p>
+      <a class = "button primary small" href="camera-finder.html">find my camera <span class = "arrow" aria-hidden="true"></span></a>
+    </section>
+
+    <div id="site-footer"></div>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>
