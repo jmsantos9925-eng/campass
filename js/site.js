@@ -139,7 +139,7 @@ function makeHeader(activePage) {
 function makeFooter() {
   return `<footer class = "footer">
     <div class = "footerBrand"><a class = "brand" href="index.html"><img class = "logo" src="${logoImage}" alt = ""><span>CamPass</span></a><p>camera choices made simple</p><small>© 2026 CamPass. All rights reserved.</small><small>Created by John Santos</small></div>
-    <div class = "footerFeedback"><strong>feedback</strong><p>Found a bug or have a suggestion?</p><a class = "feedbackLink" href="mailto:jmsantos9925@gmail.com?subject=CamPass%20feedback">send feedback</a></div>
+    <div class = "footerInfo"><img class = "footerMark" src="${logoImage}" alt = ""><div class = "footerInfoCopy"><strong>made for beginners</strong><p>Simple camera choices, settings, and shot ideas for photography and filming.</p><div class = "footerTags"><span>photo</span><span>filming</span><span>camera basics</span></div></div></div>
     <div class = "footerContact"><strong>contact</strong><div class = "contactIcons">
       <a class = "contactIcon" href="mailto:jmsantos9925@gmail.com" aria-label="email John Santos"><img src="${iconFolder}email.png" alt = ""></a>
       <a class = "contactIcon" href="tel:+67676767677" aria-label="phone"><img src="${iconFolder}phone.png" alt = ""></a>
