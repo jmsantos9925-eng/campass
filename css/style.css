@@ -1435,10 +1435,6 @@ tbody tr:hover {
 }
 
 .designHeading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 30px;
   margin-bottom: 28px;
 }
 
@@ -1446,14 +1442,6 @@ tbody tr:hover {
   margin-bottom: 0;
   font-family: "Sora", sans-serif;
   font-size: 28px;
-}
-
-.designHeading p {
-  max-width: 540px;
-  margin-bottom: 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.65;
 }
 
 .designGrid {
@@ -1499,7 +1487,7 @@ tbody tr:hover {
 .logoSource {
   color: var(--faint);
   font-family: "Roboto Mono", monospace;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .colorDark {
@@ -1522,7 +1510,7 @@ tbody tr:hover {
   display: inline-block;
   margin-top: 20px;
   color: var(--cream);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .fontList {
@@ -1542,12 +1530,12 @@ tbody tr:hover {
 
 .fontSample strong {
   color: var(--light);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .fontSample span {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .soraSample {
@@ -1572,7 +1560,7 @@ tbody tr:hover {
 .logoBlock p {
   margin-bottom: 10px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -2182,12 +2170,6 @@ tbody tr:hover {
     gap: 28px;
   }
 
-  .designHeading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .designGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2497,12 +2479,6 @@ tbody tr:hover {
 
   .designSection {
     padding: 22px;
-  }
-
-  .designHeading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
   }
 
   .designHeading h2 {
