@@ -1429,6 +1429,153 @@ tbody tr:hover {
   line-height: 1.65;
 }
 
+.designSection {
+  margin-top: 54px;
+  padding: 34px;
+}
+
+.designHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+
+.designHeading h2 {
+  margin-bottom: 0;
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+}
+
+.designHeading p {
+  max-width: 540px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.designGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.designBlock {
+  min-height: 270px;
+  padding: 22px;
+  border: 1px solid rgba(216, 217, 218, 0.14);
+  border-radius: 11px;
+  background: var(--panel);
+}
+
+.designBlock h3 {
+  margin-bottom: 18px;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 17px;
+}
+
+.colorList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.colorItem {
+  text-align: center;
+}
+
+.colorItem span {
+  display: block;
+  height: 68px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(216, 217, 218, 0.2);
+  border-radius: 8px;
+}
+
+.colorItem small,
+.logoSource {
+  color: var(--faint);
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+}
+
+.colorDark {
+  background: #272829;
+}
+
+.colorSlate {
+  background: #61677a;
+}
+
+.colorLight {
+  background: #d8d9da;
+}
+
+.colorCream {
+  background: #fff6e0;
+}
+
+.designSource {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--cream);
+  font-size: 11px;
+}
+
+.fontList {
+  display: grid;
+  gap: 10px;
+}
+
+.fontSample {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: var(--panel-soft);
+}
+
+.fontSample strong {
+  color: var(--light);
+  font-size: 14px;
+}
+
+.fontSample span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.soraSample {
+  font-family: "Sora", sans-serif;
+}
+
+.manropeSample {
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.monoSample {
+  font-family: "Roboto Mono", monospace;
+}
+
+.logoBlock img {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 13px;
+  object-fit: contain;
+}
+
+.logoBlock p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .aboutSources {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
@@ -2035,6 +2182,20 @@ tbody tr:hover {
     gap: 28px;
   }
 
+  .designHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .designGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .logoBlock {
+    grid-column: 1 / -1;
+  }
+
   .infoGrid {
     gap: 18px;
   }
@@ -2332,6 +2493,32 @@ tbody tr:hover {
   .aboutFeatureGrid,
   .aboutSources {
     grid-template-columns: 1fr;
+  }
+
+  .designSection {
+    padding: 22px;
+  }
+
+  .designHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .designHeading h2 {
+    font-size: 24px;
+  }
+
+  .designGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .logoBlock {
+    grid-column: auto;
+  }
+
+  .colorItem span {
+    height: 58px;
   }
 
   .brandCard {
