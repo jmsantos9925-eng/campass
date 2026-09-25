@@ -1748,7 +1748,7 @@ tbody tr:hover {
 }
 
 .resultWhy p {
-  margin: 7px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
@@ -1759,15 +1759,29 @@ tbody tr:hover {
 }
 
 /* camera information page */
+.cameraInfoPage .page {
+  background: var(--dark-soft);
+}
+
+.cameraInfoPage .footer {
+  background: var(--dark);
+}
+
 .cameraInfoMain {
-  min-height: 1100px;
+  min-height: calc(100vh - 96px);
   padding-top: 60px;
+  padding-bottom: 82px;
+}
+
+.cameraInfoMain .pageIntro {
+  grid-template-columns: 1fr;
+  margin-bottom: 32px;
 }
 
 .cameraInfoPanel {
   display: grid;
   grid-template-columns: 650px 1fr;
-  gap: 36px;
+  gap: 42px;
   height: 500px;
   padding: 24px;
 }
@@ -1777,7 +1791,14 @@ tbody tr:hover {
 }
 
 .cameraInfoCopy {
-  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 12px 16px 0;
+}
+
+.cameraInfoCopy .cardLabel {
+  font-size: 11px;
 }
 
 .cameraInfoCopy h2 {
@@ -1788,14 +1809,14 @@ tbody tr:hover {
 
 .cameraInfoCopy > p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
 .simpleNote {
-  margin-top: 18px;
-  padding: 16px;
-  border-radius: 8px;
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 10px;
   background: var(--panel-soft);
 }
 
@@ -1803,13 +1824,14 @@ tbody tr:hover {
   display: block;
   margin-bottom: 6px;
   color: var(--cream);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .simpleNote p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .cameraInfoMain .infoGrid {
@@ -1817,13 +1839,23 @@ tbody tr:hover {
 }
 
 .cameraInfoMain .infoCard {
-  height: 230px;
+  height: 220px;
+  padding: 28px;
 }
 
-.infoCard a {
-  color: var(--cream);
+.cameraInfoMain .infoCard h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.cameraInfoMain .infoCard p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.cameraInfoMain .infoSource {
+  margin-top: 6px;
   font-size: 12px;
-  text-decoration: none;
 }
 
 .noteActions {

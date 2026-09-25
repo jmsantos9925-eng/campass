@@ -310,7 +310,6 @@ function setupCameraInfo() {
   const id = new URLSearchParams(window.location.search).get("camera") || "dji-pocket-3";
   const camera = cameras[id] || cameras["dji-pocket-3"];
   document.title = `${camera.name} | CamPass`; name.textContent = camera.name;
-  document.querySelector("#camera-info-intro").textContent = camera.intro;
   const image = document.querySelector("#camera-info-image"); image.src = camera.image; image.alt = camera.name;
   const credit = document.querySelector("#camera-info-credit"); credit.textContent = camera.credit; credit.href = camera.creditUrl;
   document.querySelector("#camera-info-tags").innerHTML = camera.tags.map((tag) => `<span class = "tag">${tag}</span>`).join("");
