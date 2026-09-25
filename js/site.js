@@ -261,11 +261,24 @@ function getCameraResult(work, priority, brand) {
   return { id, ...cameras[id] };
 }
 
-function showFinderResult(result) {
+function getFinderReason(priority, brand = "all") {
+  if (brand !== "all") return `This matches your ${brand} brand choice and gives you a good place to start.`;
+  const reasons = {
+    easy: "A simple option for beginners who want clear controls.",
+    small: "A lighter option that is easier to carry.",
+    smooth: "A useful option for smoother handheld video.",
+    color: "A good match if creative color matters to you.",
+    action: "A tougher choice for movement and action shots."
+  };
+  return reasons[priority] || reasons.easy;
+}
+
+function showFinderResult(result, reason = getFinderReason("easy")) {
   document.querySelector("#result-name").textContent = result.name;
   document.querySelector("#result-note").textContent = result.intro;
   const image = document.querySelector("#result-image"); image.src = result.image; image.alt = result.name;
   document.querySelector("#result-tags").innerHTML = result.tags.map((tag) => `<span class = "tag">${tag}</span>`).join("");
+  document.querySelector("#result-reason").textContent = reason;
   document.querySelector("#result-link").href = `camera-info.html?camera=${result.id}`;
   const credit = document.querySelector(".finderResult .imgCredit");
   if (credit) { credit.textContent = result.credit; credit.href = result.creditUrl; }
@@ -275,14 +288,19 @@ function setupFinder() {
   const form = document.querySelector("#finder-form");
   if (!form) return;
   form.querySelectorAll("[data-choice-group]").forEach((group) => group.querySelectorAll(".chip").forEach((button) => button.addEventListener("click", () => {
-    group.querySelectorAll(".chip").forEach((item) => item.classList.remove("active")); button.classList.add("active");
+    group.querySelectorAll(".chip").forEach((item) => { item.classList.remove("active"); item.setAttribute("aria-pressed", "false"); });
+    button.classList.add("active"); button.setAttribute("aria-pressed", "true");
   })));
+  form.querySelectorAll(".chip").forEach((item) => item.setAttribute("aria-pressed", item.classList.contains("active") ? "true" : "false"));
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); showFinderResult(getCameraResult(getChoice(form, "work"), getChoice(form, "priority"), getChoice(form, "brand")));
+    event.preventDefault();
+    const priority = getChoice(form, "priority");
+    const brand = getChoice(form, "brand");
+    showFinderResult(getCameraResult(getChoice(form, "work"), priority, brand), getFinderReason(priority, brand));
   });
   form.addEventListener("reset", () => setTimeout(() => {
-    form.querySelectorAll("[data-choice-group]").forEach((group) => group.querySelectorAll(".chip").forEach((item, index) => item.classList.toggle("active", index === 0)));
-    showFinderResult({ id: "dji-pocket-3", ...cameras["dji-pocket-3"] });
+    form.querySelectorAll("[data-choice-group]").forEach((group) => group.querySelectorAll(".chip").forEach((item, index) => { item.classList.toggle("active", index === 0); item.setAttribute("aria-pressed", index === 0 ? "true" : "false"); }));
+    showFinderResult({ id: "dji-pocket-3", ...cameras["dji-pocket-3"] }, getFinderReason("smooth"));
   }, 0));
 }
 

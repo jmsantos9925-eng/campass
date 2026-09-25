@@ -8,50 +8,50 @@
   <link rel="icon" type="image/png" href="img/logo/campass-logo-nobg.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="cameras">
+<body class = "finderPage" data-page="cameras">
   <div class = "page">
     <div id="site-header"></div>
 
     <main class = "finderMain wrap">
       <section class = "pageIntro">
-        <div><p class = "eyebrow">camera finder</p><h1 class = "pageTitle">Find a camera that fits.</h1></div>
-        <p class = "introCopy">Choose a few simple options. CamPass will show a camera suggestion you can read and compare.</p>
+        <h1 class = "pageTitle">Find the right camera for you.</h1>
       </section>
 
       <section class = "finderGrid">
         <form class = "card finderForm" id="finder-form">
           <h2>Pick what matters</h2>
-          <p>These choices only filter the information shown.</p>
+          <p>Choose one option from each group.</p>
 
           <fieldset class = "question" data-choice-group="work">
-            <legend>What will you make?</legend>
+            <legend>What will you use it for?</legend>
             <div class = "filters"><button class = "chip active" type="button" data-value="photo">photo</button><button class = "chip" type="button" data-value="filming">filming</button></div>
           </fieldset>
 
           <fieldset class = "question" data-choice-group="priority">
-            <legend>What matters most?</legend>
-            <div class = "filters"><button class = "chip active" type="button" data-value="easy">easy to use</button><button class = "chip" type="button" data-value="small">small size</button><button class = "chip" type="button" data-value="smooth">smooth video</button><button class = "chip" type="button" data-value="color">good color</button><button class = "chip" type="button" data-value="action">action</button></div>
+            <legend>What is most important?</legend>
+            <div class = "filters"><button class = "chip active" type="button" data-value="easy">easy to use</button><button class = "chip" type="button" data-value="small">small and light</button><button class = "chip" type="button" data-value="smooth">steady video</button><button class = "chip" type="button" data-value="color">creative color</button><button class = "chip" type="button" data-value="action">action</button></div>
           </fieldset>
 
           <fieldset class = "question" data-choice-group="brand">
-            <legend>Choose a brand</legend>
+            <legend>Do you prefer a brand?</legend>
             <div class = "filters"><button class = "chip active" type="button" data-value="all">all</button><button class = "chip" type="button" data-value="canon">canon</button><button class = "chip" type="button" data-value="sony">sony</button><button class = "chip" type="button" data-value="nikon">nikon</button><button class = "chip" type="button" data-value="fujifilm">fujifilm</button><button class = "chip" type="button" data-value="dji">dji</button></div>
           </fieldset>
 
-          <div class = "formActions"><button class = "button primary small" type="submit">show camera picks</button><button class = "button primary small" type="reset">reset</button></div>
+          <div class = "formActions"><button class = "button primary small" type="submit">find my camera</button><button class = "button small resetButton" type="reset">reset choices</button></div>
         </form>
 
         <!-- nagpapalit kapag pinindot yung show camera picks -->
-        <article class = "card finderResult">
+        <article class = "card finderResult" aria-live="polite">
           <div class = "imgBox">
             <img id="result-image" src="img/camera/dji-osmo-pocket-3.png" alt = "camera pick">
             <a class = "imgCredit" href="https://www.smcyberzone.com/" target="_blank" rel="noopener">source: SM Cyberzone</a>
           </div>
-          <span class = "cardLabel">SAMPLE PICK</span>
+          <span class = "cardLabel">camera pick</span>
           <h2 id="result-name">DJI Osmo Pocket 3</h2>
           <p id="result-note">A small camera for vlogs, travel, and smooth handheld video.</p>
           <div class = "tagList" id="result-tags"><span class = "tag">vlog</span><span class = "tag">travel</span><span class = "tag">filming</span></div>
-          <a class = "resultLink" id="result-link" href="camera-info.html?camera=dji-pocket-3">Read the camera page before choosing.</a>
+          <div class = "resultWhy"><span class = "cardLabel">why it fits</span><p id="result-reason">A useful option for smoother handheld video.</p></div>
+          <a class = "button primary small resultButton" id="result-link" href="camera-info.html?camera=dji-pocket-3">view camera details <span class = "arrow" aria-hidden="true"></span></a>
         </article>
       </section>
     </main>

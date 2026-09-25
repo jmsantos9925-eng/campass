@@ -1639,87 +1639,123 @@ tbody tr:hover {
 }
 
 /* finder page */
+.finderPage .page {
+  background: var(--dark-soft);
+}
+
+.finderPage .footer {
+  background: var(--dark);
+}
+
 .finderMain {
-  min-height: 1000px;
+  min-height: calc(100vh - 96px);
   padding-top: 60px;
+  padding-bottom: 82px;
+}
+
+.finderMain .pageIntro {
+  grid-template-columns: 1fr;
+  margin-bottom: 32px;
 }
 
 .finderGrid {
   display: grid;
-  grid-template-columns: 760px 512px;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(390px, 0.8fr);
+  gap: 28px;
 }
 
 .finderForm,
 .finderResult {
-  height: 680px;
-  padding: 28px;
+  height: auto;
+  min-height: 630px;
+  padding: 34px;
 }
 
 .finderForm h2 {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   font-family: "Sora", sans-serif;
-  font-size: 27px;
+  font-size: 29px;
 }
 
 .finderForm > p {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .question {
-  margin: 22px 0 0;
-  padding: 0;
-  border: 0;
+  margin: 18px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(216, 217, 218, 0.12);
+  border-radius: 12px;
+  background: rgba(48, 51, 55, 0.42);
 }
 
 .question legend {
-  margin-bottom: 10px;
-  font-size: 12px;
+  padding: 0 7px;
+  color: var(--light);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .question .filters {
+  margin-top: 4px;
   margin-bottom: 0;
   gap: 8px;
 }
 
 .question .chip {
-  min-height: 36px;
-  padding: 0 15px;
+  min-height: 38px;
+  padding: 0 16px;
 }
 
 .formActions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-  margin-top: 20px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.resetButton {
+  background: transparent;
 }
 
 .finderResult .imgBox {
-  height: 260px;
-  margin-bottom: 14px;
+  height: 285px;
+  margin-bottom: 20px;
 }
 
 .finderResult h2 {
-  margin: 14px 0 12px;
+  margin: 12px 0 10px;
   font-family: "Sora", sans-serif;
   font-size: 28px;
 }
 
 .finderResult > p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .finderResult .tagList {
-  margin: 18px 0;
+  margin: 17px 0;
 }
 
-.resultLink {
-  color: var(--cream);
-  font-size: 12px;
-  text-decoration: none;
+.resultWhy {
+  margin-bottom: 20px;
+  padding: 15px 16px;
+  border-radius: 10px;
+  background: var(--panel-soft);
+}
+
+.resultWhy p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.resultButton {
+  align-self: flex-start;
 }
 
 /* camera information page */
