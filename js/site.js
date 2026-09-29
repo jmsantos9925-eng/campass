@@ -1,8 +1,8 @@
-// local folders para mabilis ko mahanap at machange yung images
+// local folders para mabilis mahanap and machange yung images
 const logoImage = "img/logo/campass-logo-nobg.png";
 const iconFolder = "img/icons/";
 
-// dito lahat ng camera info para isang list lang
+// lahat ng camera info para isang list lang
 const cameras = {
   "canon-r50": {
     name: "Canon EOS R50", brand: "Canon", image: "img/camera/canon-eos-r50.jpg",
