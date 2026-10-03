@@ -320,6 +320,42 @@ function setupCameraInfo() {
   document.querySelector("#camera-info-official").href = camera.official;
 }
 
+function setupShotBuilder() {
+  const form = document.querySelector("#setup-form");
+  if (!form) return;
+  const setupChoices = {
+    person: { title: "Simple portrait setup", camera: "canon-r50", tip: "Keep the eyes in focus and leave a little space around the subject.", lens: "50 mm" },
+    street: { title: "Street photo setup", camera: "sony-a6400", tip: "Look for a clean background and leave space where the subject is moving.", lens: "35 mm" },
+    travel: { title: "Travel setup", camera: "nikon-z30", tip: "Show the place around the subject and keep the horizon straight.", lens: "24 mm" },
+    action: { title: "Action setup", camera: "dji-action-5", tip: "Follow the subject and leave more space in front of the movement.", lens: "wide" },
+    vlog: { title: "Vlog setup", camera: "dji-pocket-3", tip: "Keep the camera near eye level and leave a little space above your head.", lens: "20 mm" }
+  };
+
+  form.querySelectorAll("[data-setup-group]").forEach((group) => group.querySelectorAll(".chip").forEach((button) => button.addEventListener("click", () => {
+    group.querySelectorAll(".chip").forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+  })));
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const choice = (name) => form.querySelector(`[data-setup-group="${name}"] .active`).dataset.value;
+    const work = choice("work");
+    const subject = choice("subject");
+    const light = choice("light");
+    const movement = choice("movement");
+    const setup = setupChoices[subject];
+    const aperture = light === "low" ? "f 2" : subject === "travel" ? "f 8" : "f 2.8";
+    const shutter = work === "filming" ? "1 50" : movement === "moving" ? "1 1000" : "1 250";
+    const iso = light === "bright" ? "100" : light === "indoor" ? "400" : "1600";
+    document.querySelector("#setup-title").textContent = work === "filming" ? setup.title.replace("photo", "video") : setup.title;
+    document.querySelector("#setup-camera").textContent = cameras[setup.camera].name;
+    document.querySelector("#setup-specs").innerHTML = `<span><small>aperture</small><strong>${aperture}</strong></span><span><small>shutter</small><strong>${shutter}</strong></span><span><small>ISO</small><strong>${iso}</strong></span><span><small>lens</small><strong>${setup.lens}</strong></span>`;
+    document.querySelector("#setup-tip").textContent = setup.tip;
+    document.querySelector("#setup-list").innerHTML = `<li>Check the background and light.</li><li>Take one test ${work === "filming" ? "clip" : "shot"}.</li><li>Adjust if it looks too bright, dark, or blurry.</li>`;
+    document.querySelector("#setup-camera-link").href = `camera-info.html?camera=${setup.camera}`;
+  });
+}
+
 function setupCameraControls() {
   const panel = document.querySelector("#camera-controls");
   const preview = document.querySelector("#learn-preview");
@@ -453,5 +489,6 @@ setupModeButtons();
 setupMobileMenu();
 setupFinder();
 setupCameraInfo();
+setupShotBuilder();
 setupSimpleButtons();
 setupVideoLessons();

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a simple camera and shot setup with CamPass.">
+  <title>Build My Setup | CamPass</title>
+  <link rel="icon" type="image/png" href="img/logo/campass-logo-nobg.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class = "setupPage" data-page="home">
+  <div class = "page">
+    <div id="site-header"></div>
+
+    <main class = "setupMain wrap">
+      <section class = "pageIntro">
+        <div><h1 class = "pageTitle">Build a starting setup.</h1></div>
+      </section>
+
+      <section class = "setupGrid">
+        <form class = "card setupForm" id="setup-form">
+          <fieldset class = "question" data-setup-group="work">
+            <legend>What are you making?</legend>
+            <div class = "filters"><button class = "chip active" type="button" data-value="photo">photo</button><button class = "chip" type="button" data-value="filming">filming</button></div>
+          </fieldset>
+          <fieldset class = "question" data-setup-group="subject">
+            <legend>What is your subject?</legend>
+            <div class = "filters"><button class = "chip active" type="button" data-value="person">person</button><button class = "chip" type="button" data-value="street">street</button><button class = "chip" type="button" data-value="travel">travel</button><button class = "chip" type="button" data-value="action">action</button><button class = "chip" type="button" data-value="vlog">vlog</button></div>
+          </fieldset>
+          <fieldset class = "question" data-setup-group="light">
+            <legend>What is the lighting?</legend>
+            <div class = "filters"><button class = "chip active" type="button" data-value="bright">bright</button><button class = "chip" type="button" data-value="indoor">indoor</button><button class = "chip" type="button" data-value="low">low light</button></div>
+          </fieldset>
+          <fieldset class = "question" data-setup-group="movement">
+            <legend>Is the subject moving?</legend>
+            <div class = "filters"><button class = "chip active" type="button" data-value="still">mostly still</button><button class = "chip" type="button" data-value="moving">moving</button></div>
+          </fieldset>
+          <button class = "button primary setupButton" type="submit">show my setup <span class = "arrow" aria-hidden="true"></span></button>
+        </form>
+
+        <article class = "card setupResult" aria-live="polite">
+          <span class = "beginnerText">recommended for beginners</span>
+          <h2 id="setup-title">Simple portrait setup</h2>
+          <p id="setup-camera">Canon EOS R50</p>
+          <div class = "setupSpecs" id="setup-specs"><span><small>aperture</small><strong>f 2.8</strong></span><span><small>shutter</small><strong>1 250</strong></span><span><small>ISO</small><strong>200</strong></span><span><small>lens</small><strong>50 mm</strong></span></div>
+          <div class = "setupTip"><strong>Framing tip</strong><p id="setup-tip">Keep the eyes in focus and leave a little space around the subject.</p></div>
+          <div class = "setupList"><strong>Before you shoot</strong><ul id="setup-list"><li>Check the background.</li><li>Take one test shot.</li><li>Adjust if the image is too bright or dark.</li></ul></div>
+          <div class = "setupLinks"><a class = "button primary small" id="setup-camera-link" href="camera-info.html?camera=canon-r50">view camera</a><a class = "button small" href="shot-guide.html">see shot ideas</a></div>
+        </article>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -694,6 +694,61 @@ p {
   font-size: 9px;
 }
 
+.homeGoal {
+  padding: 64px 72px;
+  background: var(--dark);
+}
+
+.goalHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.goalHeading h2 {
+  margin: 8px 0 0;
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 34px;
+}
+
+.goalHeading > p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.goalGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.goalCard {
+  min-height: 155px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.goalCard strong {
+  color: var(--cream);
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+}
+
+.goalCard p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .homeBrands {
   height: 356px;
   padding: 44px 72px;
@@ -1758,6 +1813,117 @@ tbody tr:hover {
   align-self: flex-start;
 }
 
+.setupPage .page {
+  background: var(--dark-soft);
+}
+
+.setupPage .footer {
+  background: var(--dark);
+}
+
+.setupMain {
+  min-height: calc(100vh - 96px);
+  padding-top: 60px;
+  padding-bottom: 82px;
+}
+
+.setupGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(470px, 0.86fr);
+  gap: 28px;
+}
+
+.setupForm,
+.setupResult {
+  min-height: 660px;
+  padding: 34px;
+}
+
+.setupForm .question:first-child {
+  margin-top: 0;
+}
+
+.setupButton {
+  margin-top: 26px;
+}
+
+.beginnerText {
+  display: inline-flex;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--dark);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.setupResult h2 {
+  margin: 24px 0 8px;
+  font-family: "Sora", sans-serif;
+  font-size: 31px;
+}
+
+.setupResult > p {
+  color: var(--cream);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.setupSpecs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.setupSpecs span {
+  display: flex;
+  min-height: 72px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--panel-soft);
+}
+
+.setupSpecs small,
+.specItem span {
+  color: var(--faint);
+  font-family: "Roboto Mono", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.setupSpecs strong {
+  margin-top: 5px;
+  color: var(--cream);
+  font-size: 15px;
+}
+
+.setupTip,
+.setupList {
+  margin-top: 18px;
+  color: var(--light);
+}
+
+.setupTip p,
+.setupList li {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.setupList ul {
+  margin: 9px 0 0;
+  padding-left: 20px;
+}
+
+.setupLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
 /* camera information page */
 .cameraInfoPage .page {
   background: var(--dark-soft);
@@ -1891,6 +2057,33 @@ tbody tr:hover {
   .homeBrands {
     padding-right: 40px;
     padding-left: 40px;
+  }
+
+  .homeGoal {
+    padding: 50px 38px;
+  }
+
+  .goalHeading h2 {
+    font-size: 28px;
+  }
+
+  .goalHeading > p {
+    max-width: 330px;
+    font-size: 13px;
+  }
+
+  .goalCard {
+    min-height: 170px;
+    padding: 21px;
+  }
+
+  .setupGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
+  }
+
+  .setupForm,
+  .setupResult {
+    padding: 24px;
   }
 
   .learnPanel {
@@ -2423,7 +2616,8 @@ tbody tr:hover {
   .videoMain,
   .aboutMain,
   .finderMain,
-  .cameraInfoMain {
+  .cameraInfoMain,
+  .setupMain {
     min-height: 0;
     padding-top: 44px;
     padding-bottom: 44px;
@@ -2510,6 +2704,35 @@ tbody tr:hover {
   .homeBrands {
     height: auto;
     padding: 40px 20px;
+  }
+
+  .homeGoal {
+    padding: 40px 20px;
+  }
+
+  .goalHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .goalHeading h2 {
+    font-size: 25px;
+  }
+
+  .goalHeading > p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .goalGrid,
+  .setupGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .goalCard {
+    min-height: 0;
+    padding: 21px;
   }
 
   .brandHeading {
@@ -2607,6 +2830,21 @@ tbody tr:hover {
   .cameraCard .imgBox,
   .shotCard .imgBox {
     height: 210px;
+  }
+
+  .setupForm,
+  .setupResult {
+    min-height: 0;
+    padding: 19px;
+  }
+
+  .setupResult h2 {
+    font-size: 25px;
+  }
+
+  .setupLinks {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .wideNote {
