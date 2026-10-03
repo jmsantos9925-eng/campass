@@ -11,7 +11,8 @@ const cameras = {
     heading: "Easy to learn and light to carry.",
     copy: "The simple controls and small body make it friendly for beginners. It can also record video when you want one camera for both uses.",
     fit: "A good first mirrorless camera for school work, trips, portraits, and simple videos.",
-    know: "It uses changeable RF lenses, so the lens you choose also affects the final result."
+    know: "It uses changeable RF lenses, so the lens you choose also affects the final result.",
+    specs: [["sensor", "24.2 MP APS-C"], ["video", "4K up to 30 fps"], ["lens", "Canon RF mount"], ["weight", "about 375 g"]]
   },
   "canon-r100": {
     name: "Canon EOS R100", brand: "Canon", image: "img/camera/canon-eos-r100.png",
@@ -20,7 +21,8 @@ const cameras = {
     heading: "A basic starting point for photography.",
     copy: "The compact body and simple controls make it easier to practice composition, exposure, and using different lenses.",
     fit: "A useful pick for school events, family photos, travel, and beginners moving from a phone.",
-    know: "It uses Canon RF and RF-S lenses. Its screen is fixed, so it is less suited for filming yourself."
+    know: "It uses Canon RF and RF-S lenses. Its screen is fixed, so it is less suited for filming yourself.",
+    specs: [["sensor", "24.1 MP APS-C"], ["video", "4K up to 24 fps"], ["lens", "Canon RF mount"], ["weight", "about 356 g"]]
   },
   "canon-r50-v": {
     name: "Canon EOS R50 V", brand: "Canon", image: "img/camera/canon-eos-r50-v.png",
@@ -29,7 +31,8 @@ const cameras = {
     heading: "Canon controls made for video.",
     copy: "The front record button, vertical tripod mount, and video tools help when filming yourself or making short projects.",
     fit: "A good match for vlogs, school films, interviews, and vertical videos.",
-    know: "It uses Canon RF and RF-S lenses and is more video-focused than the regular EOS R50."
+    know: "It uses Canon RF and RF-S lenses and is more video-focused than the regular EOS R50.",
+    specs: [["sensor", "24 MP APS-C"], ["video", "4K up to 60 fps"], ["lens", "Canon RF mount"], ["weight", "about 370 g"]]
   },
   "sony-zve10-ii": {
     name: "Sony ZV E10 II", brand: "Sony", image: "img/camera/sony-zve10-ii.jpg",
@@ -38,7 +41,8 @@ const cameras = {
     heading: "Made for creators and everyday filming.",
     copy: "The flip screen and creator controls are useful for vlogs, school videos, and filming yourself. It also takes regular photos.",
     fit: "A useful choice when filming and content creation matter more than a viewfinder.",
-    know: "It uses changeable E mount lenses, and a lens with stabilization can help handheld shots."
+    know: "It uses changeable E mount lenses, and a lens with stabilization can help handheld shots.",
+    specs: [["sensor", "26 MP APS-C"], ["video", "4K up to 60 fps"], ["lens", "Sony E mount"], ["weight", "about 377 g"]]
   },
   "sony-a6400": {
     name: "Sony Alpha a6400", brand: "Sony", image: "img/camera/sony-a6400.png",
@@ -47,7 +51,8 @@ const cameras = {
     heading: "Fast focus in a small camera.",
     copy: "Its quick autofocus is helpful for people, street photos, moving subjects, and beginner video work.",
     fit: "A balanced option for travel, portraits, school events, and creators who also take photos.",
-    know: "It uses Sony E mount lenses. The screen flips upward, which can be blocked by a top-mounted microphone."
+    know: "It uses Sony E mount lenses. The screen flips upward, which can be blocked by a top-mounted microphone.",
+    specs: [["sensor", "24.2 MP APS-C"], ["video", "4K up to 30 fps"], ["lens", "Sony E mount"], ["weight", "about 403 g"]]
   },
   "sony-zv-1-ii": {
     name: "Sony ZV-1 II", brand: "Sony", image: "img/camera/sony-zv-1-ii.png",
@@ -56,7 +61,8 @@ const cameras = {
     heading: "A complete vlog setup in one camera.",
     copy: "The wide built-in lens, flip screen, and microphone make it easy to record without choosing a separate lens.",
     fit: "A useful choice for daily vlogs, travel clips, short videos, and filming yourself.",
-    know: "Its lens cannot be changed, but that also makes the setup simpler to carry and use."
+    know: "Its lens cannot be changed, but that also makes the setup simpler to carry and use.",
+    specs: [["sensor", "20.1 MP 1 inch"], ["video", "4K up to 30 fps"], ["lens", "built in 18 to 50 mm"], ["weight", "about 292 g"]]
   },
   "nikon-z50-ii": {
     name: "Nikon Z50 II", brand: "Nikon", image: "img/camera/nikon-z50-ii.png",
@@ -65,7 +71,8 @@ const cameras = {
     heading: "Familiar controls with room to learn.",
     copy: "The grip, viewfinder, and automatic subject focus make it comfortable for beginners who also want to practice manual settings.",
     fit: "A balanced pick for travel, family photos, school events, and beginner video.",
-    know: "It uses Nikon Z lenses. Check whether a kit lens is included before choosing."
+    know: "It uses Nikon Z lenses. Check whether a kit lens is included before choosing.",
+    specs: [["sensor", "20.9 MP APS-C"], ["video", "4K up to 60 fps"], ["lens", "Nikon Z mount"], ["weight", "about 495 g"]]
   },
   "nikon-z30": {
     name: "Nikon Z30", brand: "Nikon", image: "img/camera/nikon-z30.png",
@@ -74,7 +81,8 @@ const cameras = {
     heading: "Small body with simple video controls.",
     copy: "The flip screen and light body help when filming yourself or carrying the camera during trips and school activities.",
     fit: "A good choice for beginner vlogs, travel stories, school videos, and casual photography.",
-    know: "It uses Nikon Z lenses and does not have a built-in viewfinder."
+    know: "It uses Nikon Z lenses and does not have a built-in viewfinder.",
+    specs: [["sensor", "20.9 MP APS-C"], ["video", "4K up to 30 fps"], ["lens", "Nikon Z mount"], ["weight", "about 350 g"]]
   },
   "fujifilm-xs20": {
     name: "Fujifilm X-S20", brand: "Fujifilm", image: "img/camera/fujifilm-xs20.jpg",
@@ -83,7 +91,8 @@ const cameras = {
     heading: "Good color in a compact camera.",
     copy: "Its film looks give beginners ready-made color choices, while stabilization helps with handheld photos and video.",
     fit: "A strong match for street photos, travel stories, and students who enjoy trying different color looks.",
-    know: "It uses Fujifilm X lenses. Film looks are creative choices and can still be adjusted."
+    know: "It uses Fujifilm X lenses. Film looks are creative choices and can still be adjusted.",
+    specs: [["sensor", "26.1 MP APS-C"], ["video", "6.2K up to 30 fps"], ["lens", "Fujifilm X mount"], ["weight", "about 491 g"]]
   },
   "fujifilm-xm5": {
     name: "Fujifilm X-M5", brand: "Fujifilm", image: "img/camera/fujifilm-xm5.jpg",
@@ -92,7 +101,8 @@ const cameras = {
     heading: "Creative color in a small body.",
     copy: "Its film simulation dial gives quick color choices while the flip screen supports video and filming yourself.",
     fit: "A useful pick for street photos, travel, short films, and creators who enjoy different color styles.",
-    know: "It uses Fujifilm X lenses and does not have a built-in viewfinder."
+    know: "It uses Fujifilm X lenses and does not have a built-in viewfinder.",
+    specs: [["sensor", "26.1 MP APS-C"], ["video", "6.2K up to 30 fps"], ["lens", "Fujifilm X mount"], ["weight", "about 355 g"]]
   },
   "dji-pocket-3": {
     name: "DJI Osmo Pocket 3", brand: "DJI", image: "img/camera/dji-osmo-pocket-3.png",
@@ -101,7 +111,8 @@ const cameras = {
     heading: "Small, steady, and easy to carry.",
     copy: "The built in stabilizer helps keep video smooth. The small body is useful when you do not want to carry a large camera.",
     fit: "It is small, easy to carry, and useful for smooth handheld video.",
-    know: "It is best for simple filming and does not use changeable lenses."
+    know: "It is best for simple filming and does not use changeable lenses.",
+    specs: [["sensor", "1 inch CMOS"], ["video", "4K up to 120 fps"], ["lens", "built in 20 mm"], ["weight", "about 179 g"]]
   },
   "dji-action-5": {
     name: "DJI Osmo Action 5 Pro", brand: "DJI", image: "img/camera/dji-osmo-action-5-pro.png",
@@ -110,7 +121,8 @@ const cameras = {
     heading: "Ready for movement and outdoor shots.",
     copy: "The compact body is made for action shots and places where a bigger camera can be difficult to carry.",
     fit: "A useful pick for biking, walking clips, travel, water activities, and point of view shots.",
-    know: "It has a fixed wide lens, so it is less flexible for portraits and far subjects."
+    know: "It has a fixed wide lens, so it is less flexible for portraits and far subjects.",
+    specs: [["sensor", "1 over 1.3 inch CMOS"], ["video", "4K up to 120 fps"], ["lens", "built in wide lens"], ["weight", "about 146 g"]]
   }
 };
 
@@ -318,6 +330,8 @@ function setupCameraInfo() {
   document.querySelector("#camera-info-fit").textContent = camera.fit;
   document.querySelector("#camera-info-know").textContent = camera.know;
   document.querySelector("#camera-info-official").href = camera.official;
+  const specs = document.querySelector("#camera-info-specs");
+  if (specs) specs.innerHTML = camera.specs.map(([label, value]) => `<div class = "specItem"><span>${label}</span><strong>${value}</strong></div>`).join("");
 }
 
 function setupShotBuilder() {
