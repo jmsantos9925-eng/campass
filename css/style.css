@@ -2423,11 +2423,6 @@ tbody tr:hover {
     height: 185px;
   }
 
-  .cameraCard .imgBox::before,
-  .shotCard .imgBox::before {
-    font-size: 8px;
-  }
-
   .cardGrid .cameraCard:last-child:nth-child(odd),
   .cardGrid .shotCard:last-child:nth-child(odd) {
     grid-column: 1 / -1;
@@ -2904,6 +2899,11 @@ tbody tr:hover {
   .cameraCard .imgBox,
   .shotCard .imgBox {
     height: 210px;
+  }
+
+  .cameraCard .imgBox::before,
+  .shotCard .imgBox::before {
+    font-size: 8px;
   }
 
   .setupForm,
