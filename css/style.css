@@ -850,6 +850,21 @@ p {
   margin-bottom: 18px;
 }
 
+.cameraCard .imgBox::before,
+.shotCard .imgBox::before {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--dark);
+  content: "recommended for beginners";
+  font-size: 9px;
+  font-weight: 700;
+}
+
 .cardLabel {
   color: var(--cream);
   font-family: "Roboto Mono", monospace;
@@ -2353,6 +2368,11 @@ tbody tr:hover {
   .cameraCard .imgBox,
   .shotCard .imgBox {
     height: 185px;
+  }
+
+  .cameraCard .imgBox::before,
+  .shotCard .imgBox::before {
+    font-size: 8px;
   }
 
   .cardGrid .cameraCard:last-child:nth-child(odd),
