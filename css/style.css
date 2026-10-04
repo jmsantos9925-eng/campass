@@ -909,7 +909,7 @@ p {
 
 .shotCard .settingsRow {
   display: flex;
-  height: 46px;
+  height: 50px;
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
