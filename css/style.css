@@ -931,6 +931,10 @@ p {
   font-weight: 500;
 }
 
+.shotCard .settingsRow span:first-child {
+  white-space: nowrap;
+}
+
 .shotCard .settingsRow span:last-child {
   font-size: 11px;
 }
