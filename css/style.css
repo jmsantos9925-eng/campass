@@ -933,6 +933,7 @@ p {
 }
 
 .shotCard .settingsRow span:first-child {
+  min-width: 0;
   white-space: nowrap;
 }
 
