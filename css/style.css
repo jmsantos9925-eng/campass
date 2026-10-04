@@ -856,6 +856,7 @@ p {
   top: 10px;
   left: 10px;
   z-index: 2;
+  max-width: calc(100% - 20px);
   padding: 8px 12px;
   border: 1px solid rgba(255, 246, 224, 0.28);
   border-radius: 999px;
