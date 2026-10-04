@@ -913,7 +913,7 @@ p {
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
-  padding: 0 14px;
+  padding: 0 16px;
   border-radius: 8px;
   background: var(--panel-soft);
   color: var(--cream);
