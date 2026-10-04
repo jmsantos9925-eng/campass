@@ -929,6 +929,7 @@ p {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
   font-weight: 500;
+  line-height: 1.35;
 }
 
 .shotCard .settingsRow span:first-child {
@@ -936,7 +937,10 @@ p {
 }
 
 .shotCard .settingsRow span:last-child {
+  color: var(--light);
   font-size: 11px;
+  text-align: right;
+  white-space: nowrap;
 }
 
 /* learn page */
@@ -2917,7 +2921,12 @@ tbody tr:hover {
 
   .cameraCard .imgBox::before,
   .shotCard .imgBox::before {
-    font-size: 8px;
+    font-size: 9px;
+  }
+
+  .shotCard .settingsRow {
+    gap: 8px;
+    padding: 0 12px;
   }
 
   .setupForm,
