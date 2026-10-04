@@ -856,7 +856,7 @@ p {
   top: 10px;
   left: 10px;
   z-index: 2;
-  padding: 7px 10px;
+  padding: 8px 12px;
   border-radius: 999px;
   background: var(--dark);
   color: var(--cream);
