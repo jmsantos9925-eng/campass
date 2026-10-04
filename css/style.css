@@ -865,6 +865,7 @@ p {
   content: "recommended for beginners";
   font-size: 10px;
   line-height: 1.2;
+  letter-spacing: 0.1px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
