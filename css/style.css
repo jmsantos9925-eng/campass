@@ -861,7 +861,7 @@ p {
   background: var(--dark);
   color: var(--cream);
   content: "recommended for beginners";
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 }
 
