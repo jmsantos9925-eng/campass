@@ -940,6 +940,7 @@ p {
 }
 
 .shotCard .settingsRow span:last-child {
+  flex-shrink: 0;
   color: var(--light);
   font-size: 11px;
   text-align: right;
