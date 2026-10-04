@@ -857,6 +857,7 @@ p {
   left: 10px;
   z-index: 2;
   padding: 8px 12px;
+  border: 1px solid rgba(255, 246, 224, 0.28);
   border-radius: 999px;
   background: var(--dark);
   color: var(--cream);
