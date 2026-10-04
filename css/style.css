@@ -936,6 +936,7 @@ p {
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shotCard .settingsRow span:last-child {
