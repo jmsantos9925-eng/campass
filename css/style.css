@@ -918,7 +918,7 @@ p {
   background: var(--panel-soft);
   color: var(--cream);
   font-family: "Roboto Mono", monospace;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .shotCard .settingsRow span:last-child {
