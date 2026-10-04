@@ -867,6 +867,7 @@ p {
   line-height: 1.2;
   font-weight: 700;
   white-space: nowrap;
+  overflow: hidden;
 }
 
 .cardLabel {
