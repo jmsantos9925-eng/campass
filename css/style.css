@@ -2929,6 +2929,8 @@ tbody tr:hover {
   }
 
   .shotCard .settingsRow {
+    min-height: 50px;
+    height: auto;
     gap: 8px;
     padding: 0 12px;
   }
