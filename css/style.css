@@ -862,6 +862,7 @@ p {
   color: var(--cream);
   content: "recommended for beginners";
   font-size: 10px;
+  line-height: 1.2;
   font-weight: 700;
 }
 
