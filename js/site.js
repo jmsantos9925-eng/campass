@@ -495,6 +495,111 @@ function setupVideoLessons() {
   }));
 }
 
+const cameraTasks = [
+  { title: "Notice the light", type: "photo", goal: "Take one photo beside a window. Look at which side of the subject has more light.", settings: "f 5.6 · 1 125 · ISO 200", tip: "Turn the subject toward the window, then take one test photo." },
+  { title: "One clear subject", type: "photo", goal: "Photograph one person, object, or pet. Keep the background simple.", settings: "f 2.8 · 1 250 · ISO 200", tip: "Tap or focus on the main subject before taking the photo." },
+  { title: "Find straight lines", type: "photo", goal: "Photograph a building, road, table, or hallway with straight lines.", settings: "f 8 · 1 250 · ISO 100", tip: "Stand in the middle when possible and keep the camera level." },
+  { title: "Show the place", type: "photo", goal: "Take a wide photo that shows where the subject is.", settings: "f 8 · 1 250 · ISO 100", tip: "Include the background, but keep one clear subject in the frame." },
+  { title: "Freeze movement", type: "photo", goal: "Photograph someone walking, running, playing, or moving.", settings: "f 4 · 1 1000 · ISO auto", tip: "Leave space in front of the moving subject." },
+  { title: "Try a soft background", type: "photo", goal: "Take a portrait with a softer background behind the subject.", settings: "f 2.8 · 1 250 · ISO 200", tip: "Move the subject away from the background for a stronger blur." },
+  { title: "Use low light", type: "photo", goal: "Take a photo at sunset, indoors, or near a lamp without using flash.", settings: "f 2 · 1 80 · ISO 1600", tip: "Hold the camera still or rest it on a stable surface." },
+  { title: "Make a steady clip", type: "video", goal: "Record a short five to ten second clip while standing still.", settings: "24 fps · f 2.8 · 1 50 · ISO 400", tip: "Hold the camera with both hands and start recording before you move." },
+  { title: "Try two angles", type: "video", goal: "Record one wide clip and one closer clip of the same simple action.", settings: "24 fps · f 4 · 1 50 · ISO auto", tip: "Keep both clips steady and make each clip at least five seconds long." },
+  { title: "Tell a short story", type: "video", goal: "Make three short clips: a wide shot, a closer shot, and one detail shot.", settings: "24 fps · f 2.8 · 1 50 · ISO 400", tip: "Record the same activity so the three clips feel connected." }
+];
+
+function getTaskProgress() {
+  try { return JSON.parse(localStorage.getItem("campassTasks")) || {}; }
+  catch { return {}; }
+}
+
+function saveTaskProgress(progress) {
+  localStorage.setItem("campassTasks", JSON.stringify(progress));
+}
+
+function makeTaskPhoto(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = new Image();
+      image.onload = () => {
+        const largestSide = Math.max(image.width, image.height);
+        const ratio = largestSide > 640 ? 640 / largestSide : 1;
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(image.width * ratio);
+        canvas.height = Math.round(image.height * ratio);
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL("image/jpeg", 0.68));
+      };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function updateTaskStart() {
+  const panel = document.querySelector("#task-start");
+  if (!panel) return;
+  const completed = Object.keys(getTaskProgress()).length;
+  const action = completed ? "continue tasks" : "start camera tasks";
+  const title = completed === 10 ? "Your first camera tasks are complete." : completed ? `You finished ${completed} of 10 camera tasks.` : "Practice with 10 simple camera tasks.";
+  const copy = completed === 10 ? "Your saved shots are ready whenever you want to look back at your progress." : completed ? "Continue with the next task and keep building your camera practice." : "Start with easy shots, then move to simple photo and video practice.";
+  panel.innerHTML = `<div><p class = "eyebrow">BEGINNER CAMERA TASKS</p><h2>${title}</h2><p>${copy}</p><div class = "taskBar"><span style = "width: ${completed * 10}%"></span></div></div><a class = "button primary" href="camera-tasks.html">${action} <span class = "arrow" aria-hidden="true"></span></a>`;
+}
+
+function renderCameraTasks() {
+  const grid = document.querySelector("#task-grid");
+  if (!grid) return;
+  const progress = getTaskProgress();
+  const completeCount = Object.keys(progress).length;
+  const counter = document.querySelector("#task-count");
+  if (counter) counter.textContent = completeCount;
+  const line = document.querySelector("#task-line");
+  if (line) line.innerHTML = cameraTasks.map((task, index) => `<span class = "${progress[index] ? "done" : ""} ${index === completeCount && completeCount < cameraTasks.length ? "current" : ""}" title = "task ${index + 1}">${index + 1}</span>`).join("");
+
+  grid.innerHTML = cameraTasks.map((task, index) => {
+    const saved = progress[index];
+    const locked = index > completeCount;
+    const photo = saved?.photo ? `<img class = "taskPhoto" src = "${saved.photo}" alt = "your task ${index + 1}">` : "";
+    const state = saved ? "done" : locked ? "locked" : "ready";
+    const button = saved ? "completed" : locked ? "finish the task before this first" : "save task";
+    return `<article class = "taskCard ${state}">
+      <div class = "taskHead"><span>task ${index + 1}</span><span>${task.type}</span></div>
+      <h2>${task.title}</h2><p>${task.goal}</p>
+      <div class = "taskSettings">${task.settings}</div>
+      <p class = "taskTip"><strong>Try this:</strong> ${task.tip}</p>
+      ${photo}<label class = "taskUpload">upload your result<input type = "file" accept = "image/*" data-task-file = "${index}" ${locked || saved ? "disabled" : ""}></label>
+      <button class = "button ${saved ? "" : "primary"} taskSave" type = "button" data-task-save = "${index}" ${locked || saved ? "disabled" : ""}>${button}</button>
+    </article>`;
+  }).join("");
+
+  grid.querySelectorAll("[data-task-save]").forEach((button) => button.addEventListener("click", async () => {
+    const index = Number(button.dataset.taskSave);
+    const input = grid.querySelector(`[data-task-file="${index}"]`);
+    if (!input.files[0]) { input.focus(); return; }
+    button.textContent = "saving...";
+    const photo = await makeTaskPhoto(input.files[0]);
+    const updated = getTaskProgress();
+    updated[index] = { photo, finished: new Date().toLocaleDateString() };
+    try {
+      saveTaskProgress(updated);
+      renderCameraTasks();
+    } catch {
+      button.textContent = "photo is too large";
+    }
+  }));
+}
+
+function setupCameraTasks() {
+  updateTaskStart();
+  renderCameraTasks();
+  document.querySelector("#task-reset")?.addEventListener("click", () => {
+    if (!window.confirm("Reset all saved camera tasks on this device?")) return;
+    localStorage.removeItem("campassTasks");
+    renderCameraTasks();
+  });
+}
+
 loadSharedParts();
 setupFilter("camera", ".cameraCard");
 setupFilter("shot", ".shotCard");
@@ -506,3 +611,4 @@ setupCameraInfo();
 setupShotBuilder();
 setupSimpleButtons();
 setupVideoLessons();
+setupCameraTasks();
