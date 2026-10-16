@@ -3484,6 +3484,24 @@ tbody tr:hover {
 }
 
 /* white para kapag pinrint madaling lang basahin */
+.cameraFilters .filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.cameraFilters .filterRow + .filterRow {
+  margin-top: 16px;
+}
+
+.filterName {
+  width: 60px;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+
 .cameraFilters {
   margin-bottom: 32px;
   padding: 22px;
