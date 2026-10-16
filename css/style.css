@@ -3714,6 +3714,27 @@ body.shotViewing {
   }
 }
 
+@media (min-width: 641px) and (max-width: 1024px) {
+  .shotView {
+    width: calc(100% - 40px);
+    padding: 22px;
+  }
+
+  .shotLayout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .shotFigure img {
+    height: 320px;
+  }
+
+  .shotDetails .settingsRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media print {
   @page {
     margin: 16mm;
