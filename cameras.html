@@ -18,15 +18,22 @@
       </section>
 
       <!-- filters lang to, walang login or database na need -->
-      <div class = "filters" data-filter-group="camera" aria-label="camera filters">
-        <button class = "chip active" type="button" data-filter="all">all picks</button>
-        <button class = "chip" type="button" data-filter="photo">photo</button>
-        <button class = "chip" type="button" data-filter="filming">filming</button>
+      <div class = "cameraFilters" data-filter-group="camera" aria-label="camera filters">
+        <div class = "filterRow" data-kind="use" role="group" aria-label="camera use">
+          <span class = "filterName">Use</span>
+          <button class = "chip active" type="button" data-filter="all">all uses</button>
+          <button class = "chip" type="button" data-filter="photo">photo</button>
+          <button class = "chip" type="button" data-filter="filming">filming</button>
+        </div>
+        <div class = "filterRow" data-kind="brand" role="group" aria-label="camera brand">
+          <span class = "filterName">Brand</span>
+          <button class = "chip active" type="button" data-filter="all">all brands</button>
         <button class = "chip" type="button" data-filter="canon">canon</button>
         <button class = "chip" type="button" data-filter="sony">sony</button>
         <button class = "chip" type="button" data-filter="nikon">nikon</button>
         <button class = "chip" type="button" data-filter="fujifilm">fujifilm</button>
         <button class = "chip" type="button" data-filter="dji">dji</button>
+        </div>
       </div>
 
       <section class = "cardGrid" aria-label="camera recommendations">
