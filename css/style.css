@@ -3676,6 +3676,44 @@ body.shotViewing {
   }
 }
 
+@media (max-width: 640px) {
+  .shotView {
+    width: calc(100% - 24px);
+    max-height: calc(100dvh - 24px);
+    padding: 16px;
+  }
+
+  .shotLayout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .shotFigure img {
+    height: 240px;
+  }
+
+  .shotTop h2 {
+    font-size: 21px;
+  }
+
+  .shotDetails {
+    padding: 16px;
+  }
+
+  .shotNav {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .shotPage .shotCard {
+    min-height: 0;
+  }
+
+  .shotCard .shotOpen {
+    width: 100%;
+  }
+}
+
 @media print {
   @page {
     margin: 16mm;
