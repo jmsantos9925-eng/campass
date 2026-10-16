@@ -939,9 +939,13 @@ p {
   height: 592px;
   overflow: hidden;
   border-radius: 28px;
-  background-image: linear-gradient(to bottom, rgba(39, 40, 41, 0.02), rgba(39, 40, 41, 0.1) 55%, rgba(20, 21, 23, 0.72)), url("../img/home/hero-image.jpg");
+  background-image: linear-gradient(to bottom, rgba(39, 40, 41, 0.02), rgba(39, 40, 41, 0.1) 55%, rgba(20, 21, 23, 0.72)), url("../img/shot-guide/wide-travel-view.jpg");
   background-position: center;
   background-size: cover;
+}
+
+body[data-mode="filming"] .heroImage {
+  background-image: linear-gradient(to bottom, rgba(39, 40, 41, 0.02), rgba(39, 40, 41, 0.1) 55%, rgba(20, 21, 23, 0.72)), url("../img/home/hero-image.jpg");
 }
 
 .photoModeLabel {
