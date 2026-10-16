@@ -3495,6 +3495,25 @@ tbody tr:hover {
   overflow: auto;
 }
 
+.shotFigure {
+  margin: 0;
+  min-width: 0;
+}
+
+.shotFigure img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #151617;
+}
+
+.shotFigure figcaption {
+  padding-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .shotView::backdrop {
   background: rgba(0, 0, 0, 0.8);
 }
