@@ -193,7 +193,7 @@ p {
   cursor: pointer;
 }
 
-.button:hover {
+.button:not(.shotOpen):hover {
   border-color: rgba(255, 246, 224, 0.55);
 }
 
