@@ -3259,6 +3259,14 @@ tbody tr:hover {
     height: 210px;
   }
 
+  .cameraCard .imgBox {
+    min-height: 210px;
+  }
+
+  .cameraCard .imgBox > img {
+    padding: 14px;
+  }
+
   .cameraCard .imgBox::before,
   .shotCard .imgBox::before {
     font-size: 9px;
