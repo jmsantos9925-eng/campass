@@ -3532,6 +3532,28 @@ tbody tr:hover {
   line-height: 1.6;
 }
 
+.learnPage .previewHead {
+  font-size: 14px;
+}
+
+.learnPage .previewSettings {
+  height: auto;
+  min-height: 48px;
+  padding: 12px 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.learnPage .learnPreview .imgCredit {
+  font-size: 11px;
+}
+
+.learnPage .wideNote p {
+  font-size: 15px;
+}
+
 .shotPage .shotCard {
   height: auto;
   min-height: 450px;
