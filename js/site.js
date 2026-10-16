@@ -200,6 +200,7 @@ function clickFilter(groupName, value) {
 function applyMode(mode, preserveBrand = false) {
   document.body.dataset.mode = mode;
   document.querySelectorAll(".modeButton").forEach((item) => item.classList.toggle("active", item.dataset.mode === mode));
+  document.querySelectorAll(".modeButton").forEach((item) => item.setAttribute("aria-pressed", String(item.dataset.mode === mode)));
   const tabletModeButton = document.querySelector(".tabModeBtn");
   if (tabletModeButton) {
     tabletModeButton.textContent = mode === "filming" ? "Filming" : "Photo";
