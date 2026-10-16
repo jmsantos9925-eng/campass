@@ -3601,6 +3601,11 @@ body.shotViewing {
   overflow: hidden;
 }
 
+.cameraFilters .chip:not(.active):hover {
+  background: rgba(97, 103, 122, 0.28);
+  color: var(--light);
+}
+
 .cameraFilters .filterRow {
   display: flex;
   flex-wrap: wrap;
