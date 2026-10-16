@@ -3484,6 +3484,14 @@ tbody tr:hover {
 }
 
 /* white para kapag pinrint madaling lang basahin */
+.cameraFilters {
+  margin-bottom: 32px;
+  padding: 22px;
+  border: 1px solid #414344;
+  border-radius: 16px;
+  background: #1e2021;
+}
+
 @media print {
   @page {
     margin: 16mm;
