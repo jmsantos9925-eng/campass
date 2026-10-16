@@ -483,7 +483,8 @@ function setupShotViews() {
     ["Soft portrait", "Group photo"],
     ["Freeze the street", "Night city lights", "Building lines"],
     ["Wide travel view", "Sunset silhouette"],
-    ["Walk and talk", "Simple interview", "Behind the scenes"]
+    ["Walk and talk", "Simple interview", "Behind the scenes"],
+    ["Follow the action", "Freeze the street"]
   ];
   const tips = {
     "Soft portrait": "Face your subject toward a window or open shade. Focus on the nearest eye and leave some distance between the person and the background. Start at f/2.8 and 1/250 s, then adjust ISO for the light.",
@@ -495,7 +496,9 @@ function setupShotViews() {
     "Sunset silhouette": "Place the person against the bright sky and keep their outline clear. Set the brightness for the sky so the person stays dark. Start at f/8 and 1/500 s, then adjust for the light.",
     "Walk and talk": "Try 25 fps with a 1/50 s shutter. Walk slowly, hold the camera with both hands, and check that your face stays in frame. Record a short test and listen for wind noise.",
     "Simple interview": "Place the camera at eye level and use soft light from one side. Start at 25 fps and 1/50 s. Check focus on the eyes and test the microphone before the full recording.",
-    "Behind the scenes": "Record a wide view of the setup, then a closer view of the person working. Hold each shot still for a few seconds so it is easier to edit. Try 25 fps and 1/50 s."
+    "Behind the scenes": "Record a wide view of the setup, then a closer view of the person working. Hold each shot still for a few seconds so it is easier to edit. Try 25 fps and 1/50 s.",
+    "Follow the action": "Start at 1/1000 s and use continuous autofocus for a moving person. Leave space in front of them and take a short burst. Raise ISO if the fast shutter makes the photo too dark.",
+    "Small details": "Focus on one part of the subject and check it at a larger view. Start at f/5.6 and keep the camera steady. Step back slightly if the camera cannot focus that close."
   };
   let examples = [];
   let current = 0;
