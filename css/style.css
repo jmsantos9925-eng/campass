@@ -2777,6 +2777,10 @@ tbody tr:hover {
     height: 185px;
   }
 
+  .cameraCard .imgBox {
+    min-height: 185px;
+  }
+
   .cardGrid .cameraCard:last-child:nth-child(odd),
   .cardGrid .shotCard:last-child:nth-child(odd) {
     grid-column: 1 / -1;
