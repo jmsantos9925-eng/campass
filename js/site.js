@@ -540,6 +540,16 @@ function setupShotViews() {
   previous.addEventListener("click", () => { if (current > 0) { current--; show(); } });
   next.addEventListener("click", () => { if (current < examples.length - 1) { current++; show(); } });
   dialog.querySelector("#closeShot").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" && !previous.disabled) {
+      event.preventDefault();
+      previous.click();
+    }
+    if (event.key === "ArrowRight" && !next.disabled) {
+      event.preventDefault();
+      next.click();
+    }
+  });
   dialog.addEventListener("close", () => document.body.classList.remove("shotViewing"));
 }
 
