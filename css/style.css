@@ -3484,6 +3484,24 @@ tbody tr:hover {
 }
 
 /* white para kapag pinrint madaling lang basahin */
+.shotPage .shotCard {
+  height: auto;
+  min-height: 450px;
+}
+
+.shotCard .shotOpen {
+  align-self: flex-start;
+  margin-top: 18px;
+  min-height: 42px;
+}
+
+.shotOpen:focus-visible,
+.shotView button:focus-visible,
+.shotView a:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 4px;
+}
+
 .shotView {
   width: min(1040px, calc(100% - 48px));
   max-height: calc(100dvh - 48px);
