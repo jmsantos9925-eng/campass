@@ -482,7 +482,8 @@ function setupShotViews() {
   const groups = [
     ["Soft portrait", "Group photo"],
     ["Freeze the street", "Night city lights", "Building lines"],
-    ["Wide travel view", "Sunset silhouette"]
+    ["Wide travel view", "Sunset silhouette"],
+    ["Walk and talk", "Simple interview", "Behind the scenes"]
   ];
   const tips = {
     "Soft portrait": "Face your subject toward a window or open shade. Focus on the nearest eye and leave some distance between the person and the background. Start at f/2.8 and 1/250 s, then adjust ISO for the light.",
@@ -491,7 +492,10 @@ function setupShotViews() {
     "Night city lights": "Find a bright sign or street light to build the frame around. Hold the camera steady and start at 1/80 s. Raise ISO if the image is too dark, or use a tripod for a slower shutter.",
     "Building lines": "Stand level and keep the camera straight rather than tilting it up. Use the grid to line up the walls. Start at f/8 in daylight and step back if you need more room.",
     "Wide travel view": "Pick one main subject instead of fitting everything into the frame. Keep the horizon straight and try f/8 in daylight. Include something nearby to show depth.",
-    "Sunset silhouette": "Place the person against the bright sky and keep their outline clear. Set the brightness for the sky so the person stays dark. Start at f/8 and 1/500 s, then adjust for the light."
+    "Sunset silhouette": "Place the person against the bright sky and keep their outline clear. Set the brightness for the sky so the person stays dark. Start at f/8 and 1/500 s, then adjust for the light.",
+    "Walk and talk": "Try 25 fps with a 1/50 s shutter. Walk slowly, hold the camera with both hands, and check that your face stays in frame. Record a short test and listen for wind noise.",
+    "Simple interview": "Place the camera at eye level and use soft light from one side. Start at 25 fps and 1/50 s. Check focus on the eyes and test the microphone before the full recording.",
+    "Behind the scenes": "Record a wide view of the setup, then a closer view of the person working. Hold each shot still for a few seconds so it is easier to edit. Try 25 fps and 1/50 s."
   };
   let examples = [];
   let current = 0;
