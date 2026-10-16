@@ -3502,6 +3502,20 @@ tbody tr:hover {
   font-size: 15px;
 }
 
+.cameraFilters .clearFilters {
+  margin-top: 18px;
+}
+
+.cameraEmpty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 28px;
+  border: 1px solid #414344;
+  border-radius: 14px;
+  background: #1e2021;
+  font-size: 16px;
+}
+
 .cameraFilters {
   margin-bottom: 32px;
   padding: 22px;
