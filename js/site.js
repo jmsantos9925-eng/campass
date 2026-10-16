@@ -248,6 +248,32 @@ function setupModeButtons() {
 }
 
 function setupFilter(groupName, itemSelector) {
+  if (groupName === "camera" && document.querySelector(".cameraFilters")) {
+    const panel = document.querySelector(".cameraFilters");
+    const cards = document.querySelectorAll(itemSelector);
+    const update = () => {
+      const selected = [...panel.querySelectorAll(".filterRow .active")].map((button) => button.dataset.filter);
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || "").split(" ");
+        card.hidden = !selected.every((value) => value === "all" || tags.includes(value));
+      });
+      const empty = document.querySelector(".cameraEmpty");
+      if (empty) empty.hidden = [...cards].some((card) => !card.hidden);
+    };
+    panel.querySelectorAll(".filterRow .chip").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.closest(".filterRow").querySelectorAll(".chip").forEach((item) => item.classList.toggle("active", item === button));
+        update();
+      });
+    });
+    panel.querySelector(".clearFilters")?.addEventListener("click", () => {
+      panel.querySelectorAll('.filterRow [data-filter="all"]').forEach((button) => button.click());
+    });
+    const brand = new URLSearchParams(window.location.search).get("brand");
+    [...panel.querySelectorAll('[data-kind="brand"] .chip')].find((button) => button.dataset.filter === brand)?.click();
+    update();
+    return;
+  }
   const buttons = document.querySelectorAll(`[data-filter-group="${groupName}"] .chip`);
   const items = document.querySelectorAll(itemSelector);
   if (!buttons.length || !items.length) return;
