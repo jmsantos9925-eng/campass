@@ -3484,6 +3484,25 @@ tbody tr:hover {
 }
 
 /* white para kapag pinrint madaling lang basahin */
+.shotView {
+  width: min(1040px, calc(100% - 48px));
+  max-height: calc(100dvh - 48px);
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  color: var(--light);
+  overflow: auto;
+}
+
+.shotView::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+body.shotViewing {
+  overflow: hidden;
+}
+
 .cameraFilters .filterRow {
   display: flex;
   flex-wrap: wrap;
