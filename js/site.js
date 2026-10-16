@@ -253,6 +253,7 @@ function setupFilter(groupName, itemSelector) {
     const cards = document.querySelectorAll(itemSelector);
     const update = () => {
       const selected = [...panel.querySelectorAll(".filterRow .active")].map((button) => button.dataset.filter);
+      panel.querySelectorAll(".chip").forEach((button) => button.setAttribute("aria-pressed", String(button.classList.contains("active"))));
       cards.forEach((card) => {
         const tags = (card.dataset.tags || "").split(" ");
         card.hidden = !selected.every((value) => value === "all" || tags.includes(value));
