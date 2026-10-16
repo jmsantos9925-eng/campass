@@ -479,8 +479,13 @@ function setupShotViews() {
   const dialog = document.querySelector("#shotView");
   if (!dialog) return;
   const cards = [...document.querySelectorAll(".shotCard")];
-  const groups = [];
-  const tips = {};
+  const groups = [
+    ["Soft portrait", "Group photo"]
+  ];
+  const tips = {
+    "Soft portrait": "Face your subject toward a window or open shade. Focus on the nearest eye and leave some distance between the person and the background. Start at f/2.8 and 1/250 s, then adjust ISO for the light.",
+    "Group photo": "Keep everyone at a similar distance from the camera. Start at f/4, focus on a face near the middle, and check the people at both edges. Try f/5.6 if some faces look soft."
+  };
   let examples = [];
   let current = 0;
   const previous = dialog.querySelector("#prevShot");
