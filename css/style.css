@@ -1170,6 +1170,8 @@ body[data-mode="filming"] .heroImage {
 
 .cameraCard .imgBox {
   height: 205px;
+  min-height: 205px;
+  flex-shrink: 0;
   margin-bottom: 18px;
 }
 
