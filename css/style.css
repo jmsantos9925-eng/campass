@@ -3524,6 +3524,17 @@ tbody tr:hover {
   background: #1e2021;
 }
 
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cameraFilters {
+    padding: 18px;
+  }
+
+  .cameraFilters .chip {
+    min-height: 40px;
+    font-size: 13px;
+  }
+}
+
 @media print {
   @page {
     margin: 16mm;
@@ -3549,6 +3560,7 @@ tbody tr:hover {
   .printTools,
   .button,
   .filters,
+  .cameraFilters,
   .imgCredit {
     display: none !important;
   }
