@@ -169,6 +169,27 @@
 
     <div id="site-footer"></div>
   </div>
+  <dialog class = "shotView" id="shotView" aria-labelledby="shotTitle">
+    <div class = "shotTop">
+      <h2 id="shotTitle"></h2>
+      <button class = "button secondary small" type="button" id="closeShot">close</button>
+    </div>
+    <div class = "shotLayout">
+      <figure class = "shotFigure">
+        <img id="shotPhoto" src="img/shot-guide/soft-portrait.webp" alt="">
+        <figcaption><a id="shotCredit" target="_blank" rel="noopener"></a></figcaption>
+      </figure>
+      <div class = "shotDetails">
+        <p id="shotTip"></p>
+        <div class = "settingsRow"><span id="shotSettings"></span><span>starter settings</span></div>
+      </div>
+    </div>
+    <div class = "shotNav">
+      <button class = "button secondary small" type="button" id="prevShot">previous</button>
+      <span id="shotCount" role="status"></span>
+      <button class = "button secondary small" type="button" id="nextShot">next</button>
+    </div>
+  </dialog>
   <script src="js/site.js"></script>
 </body>
 </html>
