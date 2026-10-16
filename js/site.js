@@ -475,6 +475,55 @@ function setupCameraControls() {
   updatePreview("Move a slider or choose a preset.");
 }
 
+function setupShotViews() {
+  const dialog = document.querySelector("#shotView");
+  if (!dialog) return;
+  const cards = [...document.querySelectorAll(".shotCard")];
+  const groups = [];
+  const tips = {};
+  let examples = [];
+  let current = 0;
+  const previous = dialog.querySelector("#prevShot");
+  const next = dialog.querySelector("#nextShot");
+  const show = () => {
+    const card = examples[current];
+    const photo = card.querySelector("img");
+    const credit = card.querySelector(".imgCredit");
+    dialog.querySelector("#shotTitle").textContent = card.querySelector("h2").textContent;
+    dialog.querySelector("#shotPhoto").src = photo.src;
+    dialog.querySelector("#shotPhoto").alt = photo.alt;
+    dialog.querySelector("#shotCredit").textContent = credit.textContent;
+    dialog.querySelector("#shotCredit").href = credit.href;
+    dialog.querySelector("#shotTip").textContent = tips[card.querySelector("h2").textContent] || card.querySelector("p").textContent;
+    dialog.querySelector("#shotSettings").textContent = card.querySelector(".settingsRow span").textContent.replace(/^f\s+([\d.]+)/, "f/$1").replace(/\b1\s+(\d+)/, "1/$1 s").replace(/\biso\s+/, "ISO ");
+    dialog.querySelector("#shotCount").textContent = `${current + 1} of ${examples.length}`;
+    previous.disabled = current === 0;
+    next.disabled = current === examples.length - 1;
+    dialog.querySelector(".shotNav").hidden = examples.length === 1;
+  };
+  cards.forEach((card) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "button secondary small shotOpen";
+    button.textContent = "view examples";
+    button.setAttribute("aria-label", `view ${card.querySelector("h2").textContent} examples`);
+    card.append(button);
+    button.addEventListener("click", () => {
+      const title = card.querySelector("h2").textContent;
+      const related = groups.find((group) => group.includes(title)) || [];
+      examples = [card, ...cards.filter((item) => item !== card && related.includes(item.querySelector("h2").textContent))];
+      current = 0;
+      show();
+      dialog.showModal();
+      document.body.classList.add("shotViewing");
+    });
+  });
+  previous.addEventListener("click", () => { if (current > 0) { current--; show(); } });
+  next.addEventListener("click", () => { if (current < examples.length - 1) { current++; show(); } });
+  dialog.querySelector("#closeShot").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("close", () => document.body.classList.remove("shotViewing"));
+}
+
 function setupSimpleButtons() {
   const description = document.querySelector("#description-button"), box = document.querySelector("#description-box");
   description?.addEventListener("click", () => { box.hidden = !box.hidden; });
@@ -636,6 +685,7 @@ function setupCameraTasks() {
 loadSharedParts();
 setupFilter("camera", ".cameraCard");
 setupFilter("shot", ".shotCard");
+setupShotViews();
 setupCameraControls();
 setupModeButtons();
 setupMobileMenu();
