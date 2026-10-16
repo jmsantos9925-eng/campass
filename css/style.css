@@ -3510,6 +3510,28 @@ tbody tr:hover {
   font-size: 15px;
 }
 
+.learnPage .controlPanel > p,
+.learnPage .controlLabel {
+  font-size: 15px;
+}
+
+.learnPage .controlSectionTitle,
+.learnPage .controlLabel output,
+.learnPage .presetButtons button,
+.learnPage #reset-controls {
+  font-size: 14px;
+}
+
+.learnPage .controlResult div span {
+  font-size: 13px;
+}
+
+.learnPage .controlResult strong,
+.learnPage .controlResult p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 .shotPage .shotCard {
   height: auto;
   min-height: 450px;
