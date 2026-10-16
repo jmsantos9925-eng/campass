@@ -481,14 +481,17 @@ function setupShotViews() {
   const cards = [...document.querySelectorAll(".shotCard")];
   const groups = [
     ["Soft portrait", "Group photo"],
-    ["Freeze the street", "Night city lights", "Building lines"]
+    ["Freeze the street", "Night city lights", "Building lines"],
+    ["Wide travel view", "Sunset silhouette"]
   ];
   const tips = {
     "Soft portrait": "Face your subject toward a window or open shade. Focus on the nearest eye and leave some distance between the person and the background. Start at f/2.8 and 1/250 s, then adjust ISO for the light.",
     "Group photo": "Keep everyone at a similar distance from the camera. Start at f/4, focus on a face near the middle, and check the people at both edges. Try f/5.6 if some faces look soft.",
     "Freeze the street": "Choose a safe spot away from traffic. Frame the background first, then wait for someone to enter the scene. Start at 1/500 s for walking people and take a few frames.",
     "Night city lights": "Find a bright sign or street light to build the frame around. Hold the camera steady and start at 1/80 s. Raise ISO if the image is too dark, or use a tripod for a slower shutter.",
-    "Building lines": "Stand level and keep the camera straight rather than tilting it up. Use the grid to line up the walls. Start at f/8 in daylight and step back if you need more room."
+    "Building lines": "Stand level and keep the camera straight rather than tilting it up. Use the grid to line up the walls. Start at f/8 in daylight and step back if you need more room.",
+    "Wide travel view": "Pick one main subject instead of fitting everything into the frame. Keep the horizon straight and try f/8 in daylight. Include something nearby to show depth.",
+    "Sunset silhouette": "Place the person against the bright sky and keep their outline clear. Set the brightness for the sky so the person stays dark. Start at f/8 and 1/500 s, then adjust for the light."
   };
   let examples = [];
   let current = 0;
