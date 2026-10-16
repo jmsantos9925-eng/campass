@@ -210,6 +210,8 @@ function applyMode(mode, preserveBrand = false) {
   if (homeLabel) {
     const filming = mode === "filming";
     homeLabel.textContent = filming ? "FILMING MODE" : "PHOTO MODE";
+    const homeDescription = document.querySelector("#hero-description");
+    if (homeDescription) homeDescription.textContent = filming ? "Start with a short video. Get a camera, recording settings, and a scene to practice." : "Start with photos of people and places. Get a camera, starter settings, and a shot to practice.";
     const homeCredit = document.querySelector(".heroResult .imgCredit");
     homeCredit.textContent = filming ? "source: project image" : "source: Jaqor Q.I. on Pexels";
     homeCredit.href = filming ? "https://github.com/jmsantos9925-eng/img/blob/main/CamPass/hero%20image.jpg" : "https://www.pexels.com/photo/travel-photographer-capturing-nature-outdoors-34295745/";
