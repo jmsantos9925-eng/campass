@@ -3484,6 +3484,32 @@ tbody tr:hover {
 }
 
 /* white para kapag pinrint madaling lang basahin */
+.taskPage .taskHead,
+.taskPage .taskCount span,
+.taskPage .taskLine span {
+  font-size: 13px;
+}
+
+.taskPage .taskCard > p,
+.taskPage .taskHero > div > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.taskPage .taskSettings,
+.taskPage .taskUpload input {
+  font-size: 14px;
+}
+
+.taskPage .taskTip {
+  font-size: 15px !important;
+}
+
+.taskPage .taskUpload,
+.taskPage .taskSave {
+  font-size: 15px;
+}
+
 .shotPage .shotCard {
   height: auto;
   min-height: 450px;
