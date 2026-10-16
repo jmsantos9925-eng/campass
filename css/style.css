@@ -1175,6 +1175,13 @@ body[data-mode="filming"] .heroImage {
   margin-bottom: 18px;
 }
 
+.cameraCard .imgBox > img {
+  display: block;
+  padding: 18px;
+  object-fit: contain;
+  object-position: center;
+}
+
 .cameraCard .imgBox::before,
 .shotCard .imgBox::before {
   position: absolute;
