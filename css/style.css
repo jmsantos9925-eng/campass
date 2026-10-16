@@ -2781,6 +2781,11 @@ tbody tr:hover {
     min-height: 185px;
   }
 
+  .cameraCard {
+    height: auto;
+    min-height: 416px;
+  }
+
   .cardGrid .cameraCard:last-child:nth-child(odd),
   .cardGrid .shotCard:last-child:nth-child(odd) {
     grid-column: 1 / -1;
