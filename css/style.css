@@ -2981,7 +2981,7 @@ tbody tr:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 54px;
+    margin-bottom: 36px;
   }
 
   .menuHead .brand {
@@ -2998,11 +2998,11 @@ tbody tr:hover {
   .phoneMenu nav {
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
   .phoneMenu nav a {
-    padding: 16px 0;
+    padding: 13px 0;
     border-bottom: 1px solid var(--line);
     color: var(--light);
     font-family: "Sora", sans-serif;
